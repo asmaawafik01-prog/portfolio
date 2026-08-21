@@ -1,0 +1,54 @@
+.frame {
+  position: relative;
+  width: 100%;
+  background: #08080a;
+  border-radius: 34px;
+  border: 2px solid rgba(250, 250, 250, 0.14);
+  padding: 10px;
+  box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.7);
+}
+
+.screen {
+  position: relative;
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top;
+}
+
+.notch {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34%;
+  height: 20px;
+  background: #08080a;
+  border-radius: 0 0 14px 14px;
+  z-index: 2;
+}
+
+/* Compact variant — for small mockup thumbnails (e.g. Highlights galleries) where the
+   fixed pixel bezel/radius above would look disproportionately chunky. Values scale
+   with the frame's own rendered size instead of being fixed. */
+.frameCompact {
+  border-radius: 13%;
+  padding: 3.2%;
+}
+
+.frameCompact .screen {
+  border-radius: 9%;
+}
+
+.frameCompact .notch {
+  /* Van Sales' source screenshots have their own header text flush against the top edge —
+     a decorative notch at this small size covers that title. Compact mockups skip it. */
+  display: none;
+}

@@ -1,0 +1,73 @@
+.card {
+  display: grid;
+  grid-template-columns: 1fr 0.72fr;
+  gap: 44px;
+  align-items: center;
+  padding: 44px 0;
+}
+
+.card + .card {
+  border-top: 1px solid var(--border);
+}
+
+.num {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy-bright-text);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.field + .field {
+  margin-top: 18px;
+}
+
+.fieldLabel {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--navy-bright-text);
+  margin-bottom: 6px;
+}
+
+.fieldValue {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.005em;
+}
+
+.field + .field .fieldValue {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.resultCol {
+  max-width: 220px;
+  margin: 0 auto;
+}
+
+.resultLabel {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+@media (max-width: 860px) {
+  .card {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .resultCol {
+    order: -1;
+  }
+}

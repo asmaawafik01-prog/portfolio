@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-17T08:53:46Z",
+  "title": "Design System: Asmaa Wafik — Product Designer Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "ink-black": { "role": "neutral", "displayName": "Ink Black", "canonical": "#0d0d0f" },
+      "ink-black-alt": { "role": "neutral", "displayName": "Ink Black Alt", "canonical": "#121218" },
+      "navy-deep": { "role": "neutral", "displayName": "Navy Deep", "canonical": "#0f1b33" },
+      "navy-deep-2": { "role": "neutral", "displayName": "Navy Deep 2", "canonical": "#1b2a4a" },
+      "signal-azure": { "role": "primary", "displayName": "Signal Azure", "canonical": "#4a6fa5", "tonalRamp": ["#0f1b33", "#152747", "#1e355d", "#2c4a78", "#3b5998", "#4a6fa5", "#7a97c0", "#a9bedb", "#d4e0f0", "#eef3fa"] },
+      "signal-azure-deep": { "role": "primary", "displayName": "Signal Azure Deep", "canonical": "#3b5998" },
+      "signal-azure-text": { "role": "primary", "displayName": "Signal Azure Text", "canonical": "#7a97c0" },
+      "paper-white": { "role": "neutral", "displayName": "Paper White", "canonical": "#fafafa" },
+      "slate-muted": { "role": "neutral", "displayName": "Slate Muted", "canonical": "#a1a1aa" },
+      "hairline": { "role": "neutral", "displayName": "Hairline", "canonical": "rgba(250, 250, 250, 0.08)" },
+      "hairline-strong": { "role": "neutral", "displayName": "Hairline Strong", "canonical": "rgba(250, 250, 250, 0.14)" },
+      "bezel-black": { "role": "neutral", "displayName": "Bezel Black", "canonical": "#1a1a1e" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero name only — the single largest element on the site." },
+      "headline": { "displayName": "Headline", "purpose": "Homepage and case-study section headings." },
+      "title": { "displayName": "Title", "purpose": "Card and component titles (project cards, decision blocks, highlight cards)." },
+      "body": { "displayName": "Body", "purpose": "Paragraph copy, in Paper White or Slate Muted depending on emphasis." },
+      "label": { "displayName": "Label", "purpose": "Eyebrows, tags, pills, and numbered index labels." }
+    },
+    "shadows": [
+      { "name": "device-frame", "value": "0 24px 60px -20px rgba(0, 0, 0, 0.7)", "purpose": "Always-on shadow for phone/tablet/browser device frames — the one resting shadow in the system." },
+      { "name": "card-hover-lift", "value": "0 20px 44px -20px rgba(0, 0, 0, 0.55)", "purpose": "Project card hover state, paired with translateY(-4px) and a border color shift to Signal Azure." },
+      { "name": "mockup-drop-shadow", "value": "drop-shadow(0 16px 28px rgba(0, 0, 0, 0.5))", "purpose": "Device mockup image inside a project card's stage; deepens to drop-shadow(0 26px 40px rgba(0,0,0,0.6)) on card hover." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "0.15s ease", "purpose": "Default transition for color/border-color changes on links, nav items, borders." },
+      { "name": "ease-lift", "value": "0.25s ease", "purpose": "Card hover transform/shadow transitions." },
+      { "name": "ease-mockup", "value": "0.4s cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Device mockup hover scale/translate inside project cards." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "480px" },
+      { "name": "md", "value": "640px" },
+      { "name": "lg", "value": "780px" },
+      { "name": "xl", "value": "860px" },
+      { "name": "2xl", "value": "960px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Filled Signal Azure CTA, used for the hero's View Work and the contact card's Email action.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">View Work →</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; background: #4a6fa5; color: #fafafa; font-weight: 600; font-size: 15px; padding: 13px 24px; border-radius: 8px; border: 1px solid transparent; transition: background 0.15s ease, transform 0.15s ease; } .ds-btn-primary:hover { background: #3b5998; transform: translateY(-1px); } .ds-btn-primary:focus-visible { outline: 2px solid #4a6fa5; outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Ghost/outline CTA, used alongside the primary button for lower-emphasis actions (e.g. LinkedIn).",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#\">LinkedIn</a>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: #fafafa; font-weight: 600; font-size: 15px; padding: 12px 24px; border-radius: 8px; border: 1px solid rgba(250, 250, 250, 0.14); transition: border-color 0.15s ease, background 0.15s ease; } .ds-btn-secondary:hover { border-color: #4a6fa5; background: rgba(74, 111, 165, 0.08); } .ds-btn-secondary:focus-visible { outline: 2px solid #4a6fa5; outline-offset: 2px; }"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "card-surface",
+      "description": "Homepage case-study card: gradient navy surface, device mockup stage with radial glow, hover lift + border glow + deepened mockup shadow.",
+      "html": "<article class=\"ds-project-card\"><div class=\"ds-project-stage\"><span class=\"ds-project-index\">01</span></div><div class=\"ds-project-body\"><h3 class=\"ds-project-title\">iCare</h3><p class=\"ds-project-desc\">Turning a confusing paper prescription into a guided, confident booking experience.</p></div></article>",
+      "css": ".ds-project-card { position: relative; display: flex; flex-direction: column; border-radius: 16px; border: 1px solid rgba(250, 250, 250, 0.08); background: linear-gradient(180deg, #1b2a4a 0%, #0f1b33 100%); overflow: hidden; transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease; } .ds-project-card:hover { border-color: #4a6fa5; transform: translateY(-4px); box-shadow: 0 20px 44px -20px rgba(0, 0, 0, 0.55); } .ds-project-stage { position: relative; aspect-ratio: 1 / 1; background: radial-gradient(ellipse 80% 65% at 50% 8%, rgba(74, 111, 165, 0.24) 0%, rgba(74, 111, 165, 0) 70%), linear-gradient(160deg, #1b2a4a 0%, #121218 100%); border-bottom: 1px solid rgba(250, 250, 250, 0.08); } .ds-project-index { position: absolute; top: 14px; left: 14px; font-size: 12px; font-weight: 700; color: #fafafa; background: rgba(13, 13, 15, 0.72); border: 1px solid rgba(250, 250, 250, 0.14); border-radius: 6px; padding: 4px 8px; } .ds-project-body { padding: 24px 26px 28px; } .ds-project-title { font-size: 22px; font-weight: 700; letter-spacing: -0.01em; color: #fafafa; margin: 0; } .ds-project-desc { font-size: 14.5px; line-height: 1.6; color: #a1a1aa; margin-top: 12px; }"
+    },
+    {
+      "name": "Tag Pill",
+      "kind": "chip",
+      "refersTo": "tag-pill",
+      "description": "Emphasized pill used for 'After' before/after tags and category tags; a neutral variant swaps the fill for a hairline-bordered transparent background.",
+      "html": "<span class=\"ds-tag-pill ds-tag-pill--emphasis\">After</span> <span class=\"ds-tag-pill ds-tag-pill--neutral\">Before</span>",
+      "css": ".ds-tag-pill { display: inline-flex; align-items: center; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 5px 12px; border-radius: 100px; } .ds-tag-pill--emphasis { color: #fafafa; background: #4a6fa5; } .ds-tag-pill--neutral { color: #a1a1aa; background: rgba(250, 250, 250, 0.06); border: 1px solid rgba(250, 250, 250, 0.14); }"
+    },
+    {
+      "name": "Browser Device Frame",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Signature component: presents a web screenshot inside a fake browser chrome with dot indicators and an address bar block.",
+      "html": "<div class=\"ds-browser-frame\"><div class=\"ds-browser-chrome\"><div class=\"ds-browser-dots\"><span></span><span></span><span></span></div><div class=\"ds-browser-bar\"></div></div><div class=\"ds-browser-screen\"><img src=\"\" alt=\"\" /></div></div>",
+      "css": ".ds-browser-frame { position: relative; width: 100%; background: #1a1a1e; border-radius: 12px; border: 1px solid rgba(250, 250, 250, 0.14); overflow: hidden; box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.7); } .ds-browser-chrome { display: flex; align-items: center; gap: 14px; padding: 10px 14px; background: #232328; border-bottom: 1px solid rgba(250, 250, 250, 0.08); } .ds-browser-dots { display: flex; gap: 6px; } .ds-browser-dots span { width: 9px; height: 9px; border-radius: 50%; background: rgba(250, 250, 250, 0.18); display: block; } .ds-browser-bar { flex: 1; height: 20px; border-radius: 6px; background: rgba(250, 250, 250, 0.06); } .ds-browser-screen { width: 100%; background: #fff; } .ds-browser-screen img { width: 100%; height: 100%; object-fit: contain; object-position: top; display: block; }"
+    },
+    {
+      "name": "Phone Device Frame",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Signature component: presents a mobile screenshot inside a rounded handset bezel with a pill notch.",
+      "html": "<div class=\"ds-phone-frame\"><div class=\"ds-phone-notch\"></div><div class=\"ds-phone-screen\"><img src=\"\" alt=\"\" /></div></div>",
+      "css": ".ds-phone-frame { position: relative; width: 100%; background: #08080a; border-radius: 34px; border: 2px solid rgba(250, 250, 250, 0.14); padding: 10px; box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.7); } .ds-phone-screen { position: relative; width: 100%; height: 100%; border-radius: 24px; overflow: hidden; background: #fff; } .ds-phone-screen img { width: 100%; height: 100%; object-fit: contain; object-position: top; } .ds-phone-notch { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 34%; height: 20px; background: #08080a; border-radius: 0 0 14px 14px; z-index: 2; }"
+    },
+    {
+      "name": "Sticky Nav",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Sticky translucent header with a blurred backdrop, accent-dot logo, and a filled CTA chip for Contact.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-nav-logo\" href=\"#\">Asmaa Wafik<span>.</span></a><nav class=\"ds-nav-links\"><a href=\"#\">Home</a><a href=\"#\">Work</a><a href=\"#\">About</a><a class=\"ds-nav-cta\" href=\"#\">Contact</a></nav></header>",
+      "css": ".ds-nav { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; height: 72px; padding: 0 24px; background: rgba(13, 13, 15, 0.82); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(250, 250, 250, 0.08); } .ds-nav-logo { font-weight: 700; font-size: 16px; letter-spacing: -0.01em; color: #fafafa; } .ds-nav-logo span { color: #4a6fa5; } .ds-nav-links { display: flex; align-items: center; gap: 32px; } .ds-nav-links a { font-size: 14px; font-weight: 500; color: #a1a1aa; transition: color 0.15s ease; } .ds-nav-links a:hover { color: #fafafa; } .ds-nav-cta { font-size: 14px; font-weight: 600; color: #fafafa !important; background: #1b2a4a; border: 1px solid rgba(250, 250, 250, 0.14); padding: 9px 18px; border-radius: 7px; transition: border-color 0.15s ease; } .ds-nav-cta:hover { border-color: #4a6fa5; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Systems Room",
+    "overview": "The portfolio reads like a command console for serious product work: a near-black canvas, hairline dividers, and exactly one signal color that lights up interactive and important elements. Nothing competes with the case-study screenshots — the interface is confident, technical, and precise, built to make enterprise ERP flows, healthcare booking, marketplace apps, and POS redesigns feel like the credible, systems-level work they are. It deliberately avoids playful, pastel, or maximalist styling; there is no light mode, no illustration layer, and no more than one accent hue anywhere on the page.\n\nThe site's signature move is its device-frame system — bespoke phone, tablet, and browser bezels that present real screenshots as if inspected on physical hardware, each with its own near-black casing and a deep, soft drop shadow. Everything else — cards, sections, navigation — stays flat and grid-aligned, so the device frames are the only elements that feel like they're floating off the page.",
+    "keyCharacteristics": [
+      "Near-black ink canvas (#0d0d0f) with a single signal-blue accent (#4a6fa5) — no secondary or tertiary hues.",
+      "Flat-by-default surfaces; depth is reserved for floating device mockups and their hover states.",
+      "A repeatable device-frame vocabulary (phone / tablet / browser) that carries the case-study screens.",
+      "Confident, condensed Inter type at 800 weight for headings, generous line-height on body copy.",
+      "Numbered, tabular-figure labels (01, 02...) used as a structural device across strengths, decisions, and flow steps."
+    ],
+    "rules": [
+      { "name": "The One Signal Rule", "body": "Signal Azure is the only accent color in the system. If a screen needs a second color to communicate meaning, that's a sign the hierarchy is wrong — reach for weight, size, or the neutral scale first. Its two lightness steps (Signal Azure for non-text/large use, Signal Azure Text for small text) are accessibility tints of one hue, not an exception: never use base Signal Azure as small body/label text on a dark surface.", "section": "colors" },
+      { "name": "The Tabular Number Rule", "body": "Any numbered label (strengths list, decision blocks, flow steps) uses font-variant-numeric: tabular-nums and zero-padded two-digit numbers (01, 02) in Signal Azure — a small but consistent signature across the system.", "section": "typography" },
+      { "name": "The Floating-Hardware Rule", "body": "Shadows exist only where something is meant to read as a physical object (a device frame) or as actively lifting toward the cursor (hover states). A flat card at rest never has a shadow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep Signal Azure as the only accent color anywhere in the system — new sections reach for weight, size, or the neutral scale before introducing a second hue.",
+      "Do keep shadows exclusive to device frames and hover-lift states (The Floating-Hardware Rule); flat cards stay flat at rest.",
+      "Do route every new case-study screenshot through the existing Phone/Tablet/Browser frame components rather than presenting bare images.",
+      "Do use the 01, 02... tabular-numeral label pattern for any new sequential/structural list (strengths, decisions, flow steps).",
+      "Do alternate Ink Black / Ink Black Alt section backgrounds with hairline borders to create rhythm between stacked sections."
+    ],
+    "donts": [
+      "Don't introduce a light mode or a second/third accent color — the one-signal-color discipline is a deliberate, confirmed constraint.",
+      "Don't add ambient shadows to cards or sections at rest; shadows are reserved for device frames and interactive hover states only.",
+      "Don't use playful, pastel, or illustration-heavy styling — the system is intentionally technical and restrained, not startup-cute.",
+      "Don't unify the three device-frame bezel colors or radii into one shared value; each frame's slightly different near-black and radius is deliberate device-mimicry."
+    ]
+  }
+}

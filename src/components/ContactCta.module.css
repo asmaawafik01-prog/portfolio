@@ -1,0 +1,58 @@
+.section {
+  padding-bottom: 96px;
+}
+
+.card {
+  position: relative;
+  border-radius: 20px;
+  border: 1px solid var(--border-strong);
+  background: linear-gradient(135deg, var(--navy-deep-2) 0%, var(--navy-deep) 60%, var(--bg) 100%);
+  padding: 72px 40px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  bottom: -140px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 320px;
+  background: radial-gradient(ellipse at center, rgba(74, 111, 165, 0.28) 0%, rgba(74, 111, 165, 0) 70%);
+  pointer-events: none;
+}
+
+.heading {
+  position: relative;
+  font-size: clamp(28px, 3.6vw, 38px);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.supporting {
+  position: relative;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 480px;
+  margin: 14px auto 0;
+}
+
+.actions {
+  position: relative;
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 52px 24px;
+  }
+}

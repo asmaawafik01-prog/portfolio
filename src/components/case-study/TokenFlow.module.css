@@ -1,0 +1,110 @@
+.chain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 12px;
+}
+
+.node {
+  width: 180px;
+  text-align: center;
+}
+
+.nodeLabel {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--navy-bright-text);
+  margin-bottom: 10px;
+}
+
+.visual {
+  height: 108px;
+  border-radius: 12px;
+  border: 1px solid var(--border-strong);
+  background: var(--navy-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swatches {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.swatch {
+  width: 16px;
+  border-radius: 4px;
+  background: var(--navy-bright);
+}
+
+.swatchSm {
+  height: 22px;
+  opacity: 0.55;
+}
+
+.swatchMd {
+  height: 40px;
+  opacity: 0.78;
+}
+
+.swatchLg {
+  height: 60px;
+}
+
+.componentMock {
+  width: 78%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mockRow {
+  height: 12px;
+  border-radius: 4px;
+  background: rgba(250, 250, 250, 0.1);
+}
+
+.mockButton {
+  height: 20px;
+  border-radius: 6px;
+  background: var(--navy-bright);
+}
+
+.screenNode .visual {
+  height: auto;
+  min-height: 108px;
+  padding: 10px;
+  background: var(--navy-deep);
+}
+
+.screenNode .visual > div {
+  width: 64px;
+}
+
+.nodeCaption {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-top: 12px;
+}
+
+.arrow {
+  font-size: 20px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
+  .chain {
+    flex-direction: column;
+  }
+  .arrow {
+    transform: rotate(90deg);
+  }
+}

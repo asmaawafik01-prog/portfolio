@@ -1,0 +1,75 @@
+.wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.frame {
+  position: relative;
+  width: 100%;
+  background: #141417;
+  border-radius: 16px;
+  border: 2px solid rgba(250, 250, 250, 0.16);
+  padding: 16px 16px 28px;
+  box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.7);
+}
+
+.sensor {
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15%;
+  aspect-ratio: 7 / 1;
+  border-radius: 100px;
+  background: rgba(250, 250, 250, 0.2);
+  z-index: 2;
+}
+
+.screen {
+  position: relative;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top;
+}
+
+.neck {
+  width: 12%;
+  aspect-ratio: 2 / 3;
+  background: #141417;
+  border-left: 2px solid rgba(250, 250, 250, 0.16);
+  border-right: 2px solid rgba(250, 250, 250, 0.16);
+}
+
+.base {
+  width: 42%;
+  aspect-ratio: 9 / 1;
+  margin-top: -2px;
+  background: #141417;
+  border: 2px solid rgba(250, 250, 250, 0.16);
+  border-radius: 100px;
+}
+
+/* Compact variant — for small thumbnails (e.g. flow galleries), where the fixed-pixel
+   bezel radius above would look disproportionately chunky. */
+.frameCompact {
+  border-radius: 10%;
+  padding: 7% 7% 11%;
+}
+
+.frameCompact .sensor {
+  top: 3%;
+}
+
+.frameCompact .screen {
+  border-radius: 6%;
+}

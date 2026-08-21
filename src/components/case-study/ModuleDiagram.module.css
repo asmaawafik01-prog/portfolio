@@ -1,0 +1,60 @@
+.wrap {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--navy-deep);
+  padding: 28px 20px;
+  overflow-x: auto;
+}
+
+.svg {
+  width: 100%;
+  min-width: 760px;
+  height: auto;
+  display: block;
+}
+
+.moduleBox {
+  fill: var(--navy-deep-2);
+  stroke: var(--border-strong);
+  stroke-width: 1.5;
+}
+
+.paymentBox {
+  fill: var(--navy-deep-2);
+  stroke: var(--navy-bright);
+  stroke-width: 1.5;
+}
+
+.divider {
+  stroke: var(--border-strong);
+  stroke-width: 1.5;
+}
+
+.arrow {
+  fill: none;
+  stroke: var(--navy-bright);
+  stroke-width: 2;
+  opacity: 0.8;
+}
+
+.title {
+  fill: var(--text);
+  font-weight: 700;
+  font-size: 15px;
+  font-family: var(--font-sans);
+}
+
+.sub {
+  fill: var(--text-muted);
+  font-weight: 500;
+  font-size: 11.5px;
+  font-family: var(--font-sans);
+}
+
+.paymentTitle {
+  fill: var(--text);
+  font-weight: 800;
+  font-size: 19px;
+  font-family: var(--font-sans);
+}

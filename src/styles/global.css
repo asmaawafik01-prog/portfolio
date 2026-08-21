@@ -1,0 +1,207 @@
+:root {
+  --bg: #0d0d0f;
+  --bg-alt: #121218;
+  --navy-deep: #0f1b33;
+  --navy-deep-2: #1b2a4a;
+  --navy-bright: #4a6fa5;
+  --navy-bright-2: #3b5998;
+  --navy-bright-text: #7a97c0;
+  --text: #fafafa;
+  --text-muted: #a1a1aa;
+  --border: rgba(250, 250, 250, 0.08);
+  --border-strong: rgba(250, 250, 250, 0.14);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --max-width: 1160px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 96px 0;
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 64px 0;
+  }
+}
+
+.eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy-bright-text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--navy-bright);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--navy-bright);
+  color: var(--text);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 13px 24px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.btn-primary:hover {
+  background: var(--navy-bright-2);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: 1px solid var(--border-strong);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.btn-secondary:hover {
+  border-color: var(--navy-bright);
+  background: rgba(74, 111, 165, 0.08);
+}
+
+/* Scroll-reveal: fade + rise, triggered once via useReveal. Stagger with --reveal-delay. */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Device-screen "power on" — the site's signature entrance, applied inside every
+   Phone/Tablet/Browser/Kiosk frame's screen. A scanline sweeps once while the
+   screenshot fades up to its resting state. Only `transform` and `opacity` ever
+   animate here — both are compositor-only, so a gallery revealing several large
+   screenshots at once stays smooth instead of stuttering on every-frame repaint.
+   `.is-in` is applied only once the image has actually finished loading (see the
+   frame components), so the fade never has to "catch up" mid-transition. */
+.reveal-screen {
+  position: relative;
+}
+
+.reveal-screen img {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-screen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent calc(50% - 18px),
+    rgba(74, 111, 165, 0.85) 50%,
+    transparent calc(50% + 18px)
+  );
+  opacity: 0;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.reveal-screen.is-in img {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-screen.is-in::after {
+  animation: reveal-scan 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes reveal-scan {
+  0% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  85% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .reveal-screen img {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .reveal-screen::after {
+    display: none;
+  }
+}
