@@ -19,7 +19,7 @@ export function useReveal<T extends HTMLElement>(options?: IntersectionObserverI
           observer.disconnect()
         }
       },
-      { threshold: 0.15, rootMargin: '0px 0px -8% 0px', ...options },
+      { threshold: 0.1, rootMargin: '0px', ...options },
     )
     observer.observe(el)
     return () => observer.disconnect()
