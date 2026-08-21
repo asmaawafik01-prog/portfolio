@@ -7,6 +7,7 @@ import DecisionTriple from '../../components/case-study/DecisionTriple'
 import TokenFlow from '../../components/case-study/TokenFlow'
 import ScreenGallery, { type GalleryScreen } from '../../components/case-study/ScreenGallery'
 import CaseFooterNav from '../../components/case-study/CaseFooterNav'
+import styles from './SelfOrder.module.css'
 
 const IMG = (name: string) => `/images/highlights/kiosk/${name}`
 const RATIO = 1080 / 1920
@@ -93,7 +94,7 @@ export default function SelfOrder() {
             A kiosk is touched standing up, often quickly, without the precision of a phone held
             in hand. That changes what &ldquo;usable&rdquo; means for spacing, sizing, and layout.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: '0.85fr 1.15fr', gap: 48, alignItems: 'center' }}>
+          <div className={styles.researchGrid}>
             <div style={{ maxWidth: 220, margin: '0 auto' }}>
               <KioskFrame src={IMG('02-menu.png')} alt="Self-Order Kiosk menu grid" ratio={RATIO} />
             </div>
