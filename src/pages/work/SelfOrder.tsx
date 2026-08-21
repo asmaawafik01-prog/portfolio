@@ -95,7 +95,7 @@ export default function SelfOrder() {
             in hand. That changes what &ldquo;usable&rdquo; means for spacing, sizing, and layout.
           </p>
           <div className={styles.researchGrid}>
-            <div style={{ maxWidth: 220, margin: '0 auto' }}>
+            <div style={{ width: '100%', maxWidth: 220, margin: '0 auto' }}>
               <KioskFrame src={IMG('02-menu.png')} alt="Self-Order Kiosk menu grid" ratio={RATIO} />
             </div>
             <div style={{ display: 'grid', gap: 22 }}>
