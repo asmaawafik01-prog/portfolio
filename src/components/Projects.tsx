@@ -52,14 +52,8 @@ export default function Projects() {
     <section className="section" id="work">
       <div className="container">
         <div ref={headerRef} className={`${styles.header} reveal${headerRevealed ? ' is-in' : ''}`}>
-          <div>
-            <span className="eyebrow">Selected Work</span>
-            <h2 className={styles.heading}>Case studies</h2>
-          </div>
-          <p className={styles.sub}>
-            Three projects spanning healthcare, marketplace, and self-service — each with a
-            distinct problem to solve.
-          </p>
+          <span className="eyebrow">Selected Work</span>
+          <h2 className={styles.heading}>Case studies</h2>
         </div>
         <div className={styles.grid}>
           {projects.map((project, i) => (
