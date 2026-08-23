@@ -33,11 +33,11 @@ export default function Hero() {
             Asmaa Wafik
           </h1>
           <p className={`${styles.tagline} reveal${entrance}`} style={beat(2)}>
-            Designing clarity into complex products — from enterprise systems to mobile apps.
+            Designing clarity into complex products, from enterprise systems to mobile apps.
           </p>
           <p className={`${styles.supporting} reveal${entrance}`} style={beat(3)}>
             I&rsquo;m a UI/UX Designer who works within product teams to solve real usability
-            problems across enterprise, retail, and consumer platforms — from multi-module ERP
+            problems across enterprise, retail, and consumer platforms, from multi-module ERP
             workflows to end-to-end mobile app design.
           </p>
           <div className={`${styles.actions} reveal${entrance}`} style={beat(4)}>

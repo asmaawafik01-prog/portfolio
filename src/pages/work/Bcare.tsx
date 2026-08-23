@@ -48,23 +48,23 @@ const RATIO = (name: string) => {
 // The map below assigns each file to its real content and real flow position — do not
 // reorder based on filename alone.
 const galleryScreens: GalleryScreen[] = [
-  { src: IMG('01_scan_prescription.png'), step: '01', caption: 'Start a scan — capture a prescription or upload one from the gallery.', ratio: RATIO('01_scan_prescription.png') },
+  { src: IMG('01_scan_prescription.png'), step: '01', caption: 'Start a scan: capture a prescription or upload one from the gallery.', ratio: RATIO('01_scan_prescription.png') },
   { src: IMG('16_confirmation.png'), step: '02', caption: 'Live camera capture of the prescription.', ratio: RATIO('16_confirmation.png') },
   { src: IMG('02_scan_prescription_labs.png'), step: '03', caption: 'Recommended labs, with required tests listed per lab.', ratio: RATIO('02_scan_prescription_labs.png') },
   { src: IMG('03_scan_prescription_confirmed.png'), step: '04', caption: 'Tests confirmed, with a booking date and time selected.', ratio: RATIO('03_scan_prescription_confirmed.png') },
   { src: IMG('04_home.png'), step: '05', caption: 'Home / discovery screen.', ratio: RATIO('04_home.png') },
   { src: IMG('05_lab_details.png'), step: '06', caption: 'Full profile for a selected lab, including branches and services.', ratio: RATIO('05_lab_details.png') },
   { src: IMG('06_branch_select.png'), step: '07', caption: 'Choose a specific branch.', ratio: RATIO('06_branch_select.png') },
-  { src: IMG('07_booking_service.png'), step: '08', caption: 'Booking screen — selected service and appointment date.', ratio: RATIO('07_booking_service.png') },
+  { src: IMG('07_booking_service.png'), step: '08', caption: 'Booking screen: selected service and appointment date.', ratio: RATIO('07_booking_service.png') },
   { src: IMG('08_tests_browse.png'), step: '09', caption: 'Browse available tests directly, with an offer and running total.', ratio: RATIO('08_tests_browse.png') },
   { src: IMG('10_booking_date.png'), step: '10', caption: 'Add a family member to book on their behalf.', ratio: RATIO('10_booking_date.png') },
-  { src: IMG('09_family_profile.png'), step: '11', caption: 'Select a payment method — cash or wallet points.', ratio: RATIO('09_family_profile.png') },
+  { src: IMG('09_family_profile.png'), step: '11', caption: 'Select a payment method: cash or wallet points.', ratio: RATIO('09_family_profile.png') },
   { src: IMG('11_payment_method.png'), step: '12', caption: 'Fasting guidance surfaced up front, e.g. a 12-hour window.', ratio: RATIO('11_payment_method.png') },
   { src: IMG('12_fasting_notice.png'), step: '13', caption: 'Booking on behalf of a registered family member.', ratio: RATIO('12_fasting_notice.png') },
   { src: IMG('13_book_for_family.png'), step: '14', caption: 'Booking for someone not yet added to the account.', ratio: RATIO('13_book_for_family.png') },
   { src: IMG('14_book_for_other.png'), step: '15', caption: 'Booking directly for yourself.', ratio: RATIO('14_book_for_other.png') },
   { src: IMG('15_book_for_self.png'), step: '16', caption: 'Booking confirmed.', ratio: RATIO('15_book_for_self.png') },
-  { src: IMG('18_order_timeline.png'), step: '17', caption: 'Order status tracked through a timeline — confirmed, sample collected, analysis, results ready.', ratio: RATIO('18_order_timeline.png') },
+  { src: IMG('18_order_timeline.png'), step: '17', caption: 'Order status tracked through a timeline: confirmed, sample collected, analysis, results ready.', ratio: RATIO('18_order_timeline.png') },
   { src: IMG('17_order_results.png'), step: '18', caption: 'Results accessed directly in the app once ready.', ratio: RATIO('17_order_results.png') },
 ]
 
@@ -74,7 +74,7 @@ export default function Bcare() {
       <CaseHeader
         eyebrow="Case Study 01"
         title="Bcare"
-        subtitle="Healthcare booking app — 2026"
+        subtitle="Healthcare booking app, 2026"
         role="Role: UI/UX Designer (designed the app end-to-end)"
         meta={['Mobile app', 'Designed in Figma']}
         heroImage={IMG('01_scan_prescription.png')}
@@ -86,14 +86,14 @@ export default function Bcare() {
         <p>
           Bcare is a healthcare booking app designed to make accessing medical services,
           particularly laboratory testing, more convenient. Instead of relying on traditional
-          methods — calling labs or visiting them in person — users could search for tests, find
+          methods, calling labs or visiting them in person, users could search for tests, find
           nearby labs, and complete bookings directly through the app.
         </p>
       </CaseSection>
 
       <CaseSection eyebrow="The Challenge" heading="Starting from a paper prescription" alt>
         <p>
-          Healthcare booking often assumes users already understand exactly what they need —
+          Healthcare booking often assumes users already understand exactly what they need:
           which test, which lab, which service. In reality, many users start from something more
           confusing: a paper prescription written by a doctor. The core design challenge was
           turning that starting point into a clear, guided path to a booking, without requiring
@@ -112,7 +112,7 @@ export default function Bcare() {
         </ul>
         <p style={{ marginTop: 18 }}>
           I also built a lightweight set of reusable UI components as part of designing the app
-          entirely from scratch, to keep the experience visually consistent — without a formal
+          entirely from scratch, to keep the experience visually consistent, without a formal
           design system in place.
         </p>
       </CaseSection>
@@ -134,7 +134,7 @@ export default function Bcare() {
             <DecisionBlock
               index="02"
               title="Booking flexibility, with three distinct paths."
-              text="At checkout, users could book for themselves, for a registered family member, or for someone else entirely (entered manually or pulled from contacts). Each path adjusts what information is collected — this was designed around real scenarios, like a parent booking a test for a child, or someone booking on behalf of a relative who isn't formally added to their account yet."
+              text="At checkout, users could book for themselves, for a registered family member, or for someone else entirely (entered manually or pulled from contacts). Each path adjusts what information is collected. This was designed around real scenarios, like a parent booking a test for a child, or someone booking on behalf of a relative who isn't formally added to their account yet."
               images={[
                 { src: IMG('14_book_for_other.png'), alt: 'Book for self', ratio: RATIO('14_book_for_other.png') },
                 { src: IMG('12_fasting_notice.png'), alt: 'Book for family', ratio: RATIO('12_fasting_notice.png') },
@@ -152,7 +152,7 @@ export default function Bcare() {
             <DecisionBlock
               index="04"
               title="End-to-end journey, not just booking."
-              text="The experience continued past checkout: users could track their order status and, once results were ready, access them directly in the app — removing the need to follow up with the lab directly."
+              text="The experience continued past checkout: users could track their order status and, once results were ready, access them directly in the app, removing the need to follow up with the lab directly."
               images={[
                 { src: IMG('18_order_timeline.png'), alt: 'Order status timeline', ratio: RATIO('18_order_timeline.png') },
                 { src: IMG('17_order_results.png'), alt: 'Test results ready to access', ratio: RATIO('17_order_results.png') },

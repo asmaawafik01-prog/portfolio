@@ -88,14 +88,14 @@ const highlights: Highlight[] = [
     tag: 'Microtec ERP',
     title: 'One product. Multiple workflows. One consistent experience.',
     description:
-      'A multi-module ERP platform — I designed and evolved experiences across Finance, Sales, Purchase, and more, translating business requirements into UI/UX solutions and contributing to the shared Design System along the way.',
+      'A multi-module ERP platform. I designed and evolved experiences across Finance, Sales, Purchase, and more, translating business requirements into UI/UX solutions and contributing to the shared Design System along the way.',
     points: ['Multi-module ERP', 'Complex workflows', 'Design System contribution', 'Responsive UX'],
     device: 'browser',
     items: [
-      { src: ERP('14_payment_in_filled.png'), caption: 'Payment In — Finance module', ratio: 2920 / 2088 },
-      { src: ERP('05_vendor_entry.png'), caption: 'Vendor entry — Purchase module', ratio: 2880 / 2048 },
-      { src: ERP('10_customer_definition.png'), caption: 'Customer definition — Sales module', ratio: 1440 / 1024 },
-      { src: ERP('12_bank_definition_filled.png'), caption: 'Bank definition — Finance module', ratio: 2920 / 2088 },
+      { src: ERP('14_payment_in_filled.png'), caption: 'Payment In, Finance module', ratio: 2920 / 2088 },
+      { src: ERP('05_vendor_entry.png'), caption: 'Vendor entry, Purchase module', ratio: 2880 / 2048 },
+      { src: ERP('10_customer_definition.png'), caption: 'Customer definition, Sales module', ratio: 1440 / 1024 },
+      { src: ERP('12_bank_definition_filled.png'), caption: 'Bank definition, Finance module', ratio: 2920 / 2088 },
     ],
     href: '/work/erp',
   },
@@ -115,7 +115,7 @@ const highlights: Highlight[] = [
     tag: 'Ogreen',
     title: 'Retail Management System',
     description:
-      'Same POS system deployed for a retail client — redesigned the Sale screen for improved clarity and hierarchy.',
+      'Same POS system deployed for a retail client, redesigned the Sale screen for improved clarity and hierarchy.',
     before: { src: '/images/highlights/ogreen-before.png', ratio: 3830 / 1984 },
     after: { src: '/images/highlights/ogreen-after.png', ratio: 3840 / 2160 },
   },
@@ -123,14 +123,14 @@ const highlights: Highlight[] = [
     kind: 'gallery',
     title: 'Van Sales',
     description:
-      "Adapted an existing van sales app into the company's shared Design System, and designed a new solution for managing product-level tax and discounts — supporting a single tax or multiple taxes per item, and configurable customer or user discounts, each applied through a consistent bottom-sheet pattern.",
+      "Adapted an existing van sales app into the company's shared Design System, and designed a new solution for managing product-level tax and discounts, supporting a single tax or multiple taxes per item, and configurable customer or user discounts, each applied through a consistent bottom-sheet pattern.",
     device: 'phone',
     items: [
-      { src: VAN_SALES('01-base.png'), caption: 'Base state — no tax or discount applied', ratio: 393 / 807 },
+      { src: VAN_SALES('01-base.png'), caption: 'Base state, no tax or discount applied', ratio: 393 / 807 },
       { src: VAN_SALES('02-single-tax.png'), caption: 'A single tax applied', ratio: 393 / 807 },
       { src: VAN_SALES('03-multi-tax.png'), caption: 'Multiple taxes applied', ratio: 393 / 1061 },
-      { src: VAN_SALES('04-tax-sheet-all.png'), caption: 'Tax selection — all groups', ratio: 393 / 807 },
-      { src: VAN_SALES('05-tax-sheet-filtered.png'), caption: 'Tax selection — filtered to one group', ratio: 393 / 807 },
+      { src: VAN_SALES('04-tax-sheet-all.png'), caption: 'Tax selection, all groups', ratio: 393 / 807 },
+      { src: VAN_SALES('05-tax-sheet-filtered.png'), caption: 'Tax selection, filtered to one group', ratio: 393 / 807 },
       { src: VAN_SALES('06-discount-applied.png'), caption: 'A customer discount applied', ratio: 393 / 807 },
       { src: VAN_SALES('07-discount-sheet.png'), caption: 'Add Discount sheet', ratio: 393 / 807 },
     ],
@@ -144,11 +144,11 @@ const highlights: Highlight[] = [
     device: 'browser',
     items: [
       { src: MICROTEC_SITE('01-about.png'), caption: 'About Us page', ratio: 1440 / 3486 },
-      { src: MICROTEC_SITE('02-home-erp.png'), caption: 'Home page — ERP solutions', ratio: 1441 / 4768 },
+      { src: MICROTEC_SITE('02-home-erp.png'), caption: 'Home page, ERP solutions', ratio: 1441 / 4768 },
       { src: MICROTEC_SITE('03-orange.png'), caption: 'O-Orange product page, with its own color identity', ratio: 1440 / 3237 },
       { src: MICROTEC_SITE('04-red.png'), caption: 'O-Red product page, with its own color identity', ratio: 1440 / 3237 },
       { src: MICROTEC_SITE('05-green.png'), caption: 'O-Green product page, with its own color identity', ratio: 1440 / 3237 },
-      { src: MICROTEC_SITE('06-home-erp-alt.png'), caption: 'Home page — ERP dashboard, alternate variant', ratio: 1440 / 3237 },
+      { src: MICROTEC_SITE('06-home-erp-alt.png'), caption: 'Home page, ERP dashboard, alternate variant', ratio: 1440 / 3237 },
     ],
   },
 ]
@@ -170,7 +170,7 @@ export default function Highlights() {
           <span className="eyebrow">Highlights</span>
           <h2 className={styles.heading}>More selected work</h2>
           <p className={styles.sub}>
-            Smaller pieces of work shown with a lighter treatment — not full case studies.
+            Smaller pieces of work shown with a lighter treatment, not full case studies.
           </p>
         </div>
         <div ref={gridRef} className={styles.grid}>
@@ -310,17 +310,17 @@ export default function Highlights() {
                           e.stopPropagation()
                           openLightbox(
                             [
-                              { src: item.before.src, alt: `${item.title} — before` },
-                              { src: item.after.src, alt: `${item.title} — after` },
+                              { src: item.before.src, alt: `${item.title} (before)` },
+                              { src: item.after.src, alt: `${item.title} (after)` },
                             ],
                             0,
                           )
                         }}
-                        aria-label={`View larger: ${item.title} — before`}
+                        aria-label={`View larger: ${item.title} (before)`}
                       >
                         <Shot
                           src={item.before.src}
-                          alt={`${item.title} — before`}
+                          alt={`${item.title} (before)`}
                           ratio={item.before.ratio}
                         />
                       </button>
@@ -335,17 +335,17 @@ export default function Highlights() {
                           e.stopPropagation()
                           openLightbox(
                             [
-                              { src: item.before.src, alt: `${item.title} — before` },
-                              { src: item.after.src, alt: `${item.title} — after` },
+                              { src: item.before.src, alt: `${item.title} (before)` },
+                              { src: item.after.src, alt: `${item.title} (after)` },
                             ],
                             1,
                           )
                         }}
-                        aria-label={`View larger: ${item.title} — after`}
+                        aria-label={`View larger: ${item.title} (after)`}
                       >
                         <Shot
                           src={item.after.src}
-                          alt={`${item.title} — after`}
+                          alt={`${item.title} (after)`}
                           ratio={item.after.ratio}
                         />
                       </button>
@@ -379,17 +379,17 @@ export default function Highlights() {
                         onClick={() =>
                           openLightbox(
                             [
-                              { src: item.before.src, alt: `${item.title} — before` },
-                              { src: item.after.src, alt: `${item.title} — after` },
+                              { src: item.before.src, alt: `${item.title} (before)` },
+                              { src: item.after.src, alt: `${item.title} (after)` },
                             ],
                             0,
                           )
                         }
-                        aria-label={`View larger: ${item.title} — before`}
+                        aria-label={`View larger: ${item.title} (before)`}
                       >
                         <Shot
                           src={item.before.src}
-                          alt={`${item.title} — before`}
+                          alt={`${item.title} (before)`}
                           ratio={item.before.ratio}
                         />
                       </button>
@@ -402,17 +402,17 @@ export default function Highlights() {
                         onClick={() =>
                           openLightbox(
                             [
-                              { src: item.before.src, alt: `${item.title} — before` },
-                              { src: item.after.src, alt: `${item.title} — after` },
+                              { src: item.before.src, alt: `${item.title} (before)` },
+                              { src: item.after.src, alt: `${item.title} (after)` },
                             ],
                             1,
                           )
                         }
-                        aria-label={`View larger: ${item.title} — after`}
+                        aria-label={`View larger: ${item.title} (after)`}
                       >
                         <Shot
                           src={item.after.src}
-                          alt={`${item.title} — after`}
+                          alt={`${item.title} (after)`}
                           ratio={item.after.ratio}
                         />
                       </button>

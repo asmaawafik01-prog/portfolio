@@ -86,22 +86,22 @@ export default function Erp() {
             <div className={styles.heroCollage}>
               <BrowserFrame
                 src={IMG('14_payment_in_filled.png')}
-                alt="Payment In screen — Finance module"
+                alt="Payment In screen, Finance module"
                 ratio={RATIO('14_payment_in_filled.png')}
               />
               <BrowserFrame
                 src={IMG('05_vendor_entry.png')}
-                alt="Vendor entry screen — Purchase module"
+                alt="Vendor entry screen, Purchase module"
                 ratio={RATIO('05_vendor_entry.png')}
               />
               <BrowserFrame
                 src={IMG('10_customer_definition.png')}
-                alt="Customer definition screen — Sales module"
+                alt="Customer definition screen, Sales module"
                 ratio={RATIO('10_customer_definition.png')}
               />
               <BrowserFrame
                 src={IMG('06_journal_entry_a.png')}
-                alt="General Journal screen — Accounting module"
+                alt="General Journal screen, Accounting module"
                 ratio={RATIO('06_journal_entry_a.png')}
               />
             </div>
@@ -109,10 +109,10 @@ export default function Erp() {
         </div>
       </section>
 
-      <CaseSection eyebrow="01 — The Scale" heading="Designing across a complex ERP ecosystem." wide>
+      <CaseSection eyebrow="01: The Scale" heading="Designing across a complex ERP ecosystem." wide>
         <p style={{ maxWidth: 640 }}>
           Microtec ERP spans multiple business modules used daily by real operations teams. My
-          work sat across several of them — deepest in Finance &amp; Accounting, and contributing
+          work sat across several of them, deepest in Finance &amp; Accounting, and contributing
           wherever else the team needed UI/UX support.
         </p>
         <div style={{ marginTop: 32 }}>
@@ -121,12 +121,12 @@ export default function Erp() {
               {
                 index: '01',
                 verb: 'Accounting',
-                text: 'Chart of Accounts and the General Journal — the accounting-side records that feed the Finance workflows.',
+                text: 'Chart of Accounts and the General Journal, the accounting-side records that feed the Finance workflows.',
               },
               {
                 index: '02',
                 verb: 'Finance',
-                text: 'Treasury, banking, payment terms/methods, and the Payment In/Out workflow — the deepest, most complex flows I worked on.',
+                text: 'Treasury, banking, payment terms/methods, and the Payment In/Out workflow, the deepest, most complex flows I worked on.',
               },
               { index: '03', verb: 'Sales', text: 'Customer records and the sales-side data that feeds downstream transactions.' },
               { index: '04', verb: 'Purchase', text: 'Vendor records and purchase-side workflows connected to Finance.' },
@@ -140,7 +140,7 @@ export default function Erp() {
         </div>
       </CaseSection>
 
-      <CaseSection eyebrow="02 — My Contribution" heading="Where I added value, at a glance." alt wide>
+      <CaseSection eyebrow="02: My Contribution" heading="Where I added value, at a glance." alt wide>
         <div>
           <OwnershipGrid
             items={[
@@ -162,11 +162,11 @@ export default function Erp() {
         </div>
       </CaseSection>
 
-      <CaseSection eyebrow="03 — Beyond The Assigned Screen" heading="I didn&rsquo;t just design what was assigned.">
+      <CaseSection eyebrow="03: Beyond The Assigned Screen" heading="I didn&rsquo;t just design what was assigned.">
         <p>
           When I identified a product gap or a missing need, I raised it with the team, discussed
           possible solutions, contributed to defining what needed to be added, and helped shape
-          the UI/UX direction — as part of a collaborative process, not a solo call.
+          the UI/UX direction, as part of a collaborative process, not a solo call.
         </p>
         <div style={{ marginTop: 28 }}>
           <FlowSteps label="Process" steps={['Identify', 'Discuss', 'Define', 'Design', 'Align', 'Deliver']} />
@@ -175,10 +175,10 @@ export default function Erp() {
 
       <section className="section" style={{ background: 'var(--bg-alt)', borderBottom: '1px solid var(--border)' }}>
         <div className="container">
-          <span className="eyebrow">04 — Selected Modules</span>
+          <span className="eyebrow">04: Selected Modules</span>
           <h2 style={sectionHeading}>Two connected modules, up close.</h2>
           <p style={{ color: 'var(--text-muted)', fontSize: 15, maxWidth: 640, marginBottom: 8 }}>
-            Only the modules with real, shippable screens are shown here in depth — not every
+            Only the modules with real, shippable screens are shown here in depth, not every
             screen I touched.
           </p>
 
@@ -192,7 +192,7 @@ export default function Erp() {
             <p style={{ color: 'var(--text-muted)', fontSize: 15, lineHeight: 1.75, maxWidth: 700, marginTop: 10 }}>
               Payment In and Payment Out look like two simple screens. Each one actually depends
               on data configured across Treasury, Bank, Payment Terms, Payment Method, and a
-              Vendor or Customer record first — so I designed for the dependency chain as one
+              Vendor or Customer record first, so I designed for the dependency chain as one
               connected system, not isolated screens.
             </p>
             <div style={{ marginTop: 28 }}>
@@ -233,14 +233,14 @@ export default function Erp() {
                 <div>
                   <BrowserFrame
                     src={IMG('05_vendor_entry.png')}
-                    alt="Vendor entry screen — Purchase module"
+                    alt="Vendor entry screen, Purchase module"
                     ratio={RATIO('05_vendor_entry.png')}
                   />
                 </div>
                 <div>
                   <BrowserFrame
                     src={IMG('10_customer_definition.png')}
-                    alt="Customer definition screen — Sales module"
+                    alt="Customer definition screen, Sales module"
                     ratio={RATIO('10_customer_definition.png')}
                   />
                 </div>
@@ -250,9 +250,9 @@ export default function Erp() {
         </div>
       </section>
 
-      <CaseSection eyebrow="05 — My Design Cycle" heading="One cycle, applied across every module.">
+      <CaseSection eyebrow="05: My Design Cycle" heading="One cycle, applied across every module.">
         <p>
-          Regardless of the module, the same cycle repeated — adapted each time to the specific
+          Regardless of the module, the same cycle repeated, adapted each time to the specific
           business workflow, but always aimed at keeping the product experience consistent.
         </p>
         <div style={{ marginTop: 28 }}>
@@ -260,7 +260,7 @@ export default function Erp() {
         </div>
       </CaseSection>
 
-      <CaseSection eyebrow="06 — Design System At Scale" heading="Thinking beyond the individual screen." alt>
+      <CaseSection eyebrow="06: Design System At Scale" heading="Thinking beyond the individual screen." alt>
         <p>
           Working across this many modules meant screens needed to feel like one product, not
           several stitched together. When an interaction wasn&rsquo;t yet covered by the existing
@@ -275,7 +275,7 @@ export default function Erp() {
             alt="Flyout Input component states: default, error, success, and multi-tag"
           />
           <p style={{ textAlign: 'center', color: 'var(--text-muted)', fontSize: 14, marginTop: 16 }}>
-            The Flyout Input — a pattern I proposed to fill a gap in the system, now reused across
+            The Flyout Input, a pattern I proposed to fill a gap in the system, now reused across
             screens.
           </p>
         </div>
@@ -283,7 +283,7 @@ export default function Erp() {
 
       <section className="section" style={{ borderBottom: '1px solid var(--border)' }}>
         <div className="container">
-          <span className="eyebrow">07 — Full Product Showcase</span>
+          <span className="eyebrow">07: Full Product Showcase</span>
           <h2 style={sectionHeading}>Scale, variety, and one consistent visual language.</h2>
           <p style={{ color: 'var(--text-muted)', fontSize: 15, maxWidth: 640, marginBottom: 8 }}>
             A wider look across the Finance, Purchase, Sales, and Accounting screens above.
@@ -292,7 +292,7 @@ export default function Erp() {
         </div>
       </section>
 
-      <CaseSection eyebrow="08 — Outcome" heading="What this work contributed." alt>
+      <CaseSection eyebrow="08: Outcome" heading="What this work contributed." alt>
         <ul style={{ marginTop: 4, paddingLeft: 20, lineHeight: 1.9, color: 'var(--text-muted)' }}>
           <li>Contributed to a more consistent ERP experience across modules</li>
           <li>Designed complex business workflows in a clearer, more usable way</li>
@@ -313,7 +313,7 @@ export default function Erp() {
               lineHeight: 1.5,
             }}
           >
-            I wasn&rsquo;t only designing individual screens — I was contributing to how a{' '}
+            I wasn&rsquo;t only designing individual screens. I was contributing to how a{' '}
             <span style={{ color: 'var(--navy-bright-text)' }}>complex product evolved</span>{' '}
             across modules.
           </p>

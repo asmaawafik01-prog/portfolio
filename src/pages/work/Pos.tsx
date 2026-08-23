@@ -32,19 +32,19 @@ export default function Pos() {
         wide
       />
 
-      <CaseSection eyebrow="01 — The Problem" heading="An existing POS, evaluated firsthand">
+      <CaseSection eyebrow="01: The Problem" heading="An existing POS, evaluated firsthand">
         <p>
-          Ored is a live, in-use POS — not a blank slate. Before redesigning anything, I tested
+          Ored is a live, in-use POS, not a blank slate. Before redesigning anything, I tested
           the existing product firsthand to see where it broke down in real, everyday tasks.
         </p>
         <div style={{ marginTop: 28, maxWidth: 640 }}>
           <AnnotatedFrame
             src={IMG('before_02_table_screen.png')}
-            alt="Old Ored POS order list — a dense, unstructured data table"
+            alt="Old Ored POS order list, a dense, unstructured data table"
             ratio={RATIO_BEFORE}
             points={[
               { x: 50, y: 16, label: 'Search, filters, and pagination compressed into one dense toolbar.' },
-              { x: 50, y: 30, label: 'Eight columns given equal visual weight — no hierarchy for what matters most.' },
+              { x: 50, y: 30, label: 'Eight columns given equal visual weight, no hierarchy for what matters most.' },
               { x: 28, y: 37, label: 'Order status shown only as small colored text, easy to miss while scanning.' },
             ]}
           />
@@ -62,13 +62,13 @@ export default function Pos() {
       </CaseSection>
 
       <CaseSection
-        eyebrow="02 — The Redesign"
+        eyebrow="02: The Redesign"
         heading="A familiar POS, redesigned for a faster retail experience."
         alt
         wide
       >
         <p style={{ maxWidth: 640 }}>
-          Same product, same core flows — restructured so the interface gets out of the way of
+          Same product, same core flows, restructured so the interface gets out of the way of
           the work.
         </p>
         <div style={{ marginTop: 28 }}>
@@ -107,7 +107,7 @@ export default function Pos() {
 
       <section className="section">
         <div className="container">
-          <span className="eyebrow">03 — Before → After</span>
+          <span className="eyebrow">03: Before → After</span>
           <h2
             style={{
               fontSize: 'clamp(24px,3.2vw,30px)',
@@ -125,34 +125,34 @@ export default function Pos() {
 
           <BeforeAfter
             index="01"
-            title="Table Screen — Layout"
-            text="Before: a flat list of table buttons with no read on occupancy. After: a color-coded floor layout — occupancy, section, and reservation status are all visible at a glance."
+            title="Table Screen: Layout"
+            text="Before: a flat list of table buttons with no read on occupancy. After: a color-coded floor layout, occupancy, section, and reservation status are all visible at a glance."
             before={{ src: IMG('before_01_employee_meals.png'), alt: 'Old table screen, a flat list of table buttons', ratio: RATIO_BEFORE }}
             after={{ src: IMG('05_table_screen_after.png'), alt: 'Redesigned table screen with color-coded occupancy grid', ratio: RATIO_AFTER }}
           />
 
           <BeforeAfter
             index="02"
-            title="Order List — Hierarchy"
-            text="Before: every order was a raw, undifferentiated data row. After: a scannable breakdown — items, status, and payment method grouped together instead of competing for attention."
+            title="Order List: Hierarchy"
+            text="Before: every order was a raw, undifferentiated data row. After: a scannable breakdown, items, status, and payment method grouped together instead of competing for attention."
             before={{ src: IMG('before_02_table_screen.png'), alt: 'Old order list, a raw multi-column data table', ratio: RATIO_BEFORE }}
             after={{ src: IMG('03_order_list_after.png'), alt: 'Redesigned order detail with a clear item breakdown', ratio: RATIO_AFTER }}
           />
 
           <BeforeAfter
             index="03"
-            title="Item Details — Actions"
-            text="Before: discounts lived in a disconnected coupon modal, separate from the item. After: coupon codes, loyalty points, and wallet value fold into one panel directly on the item — the primary action is obvious instead of buried in a popup."
+            title="Item Details: Actions"
+            text="Before: discounts lived in a disconnected coupon modal, separate from the item. After: coupon codes, loyalty points, and wallet value fold into one panel directly on the item. The primary action is obvious instead of buried in a popup."
             before={{ src: IMG('before_03_order_list.png'), alt: 'Old discount coupon modal', ratio: RATIO_BEFORE }}
             after={{ src: IMG('01_item_details_discount_after.png'), alt: 'Redesigned item details with an offers and loyalty panel', ratio: RATIO_AFTER }}
           />
         </div>
       </section>
 
-      <CaseSection eyebrow="04 — The Improvement" heading="A clearer, more efficient retail workflow" alt>
+      <CaseSection eyebrow="04: The Improvement" heading="A clearer, more efficient retail workflow" alt>
         <p>
           This redesign hasn&rsquo;t shipped yet, so there&rsquo;s no usage data to report. What&rsquo;s
-          here is the direct result of solving the problems identified during evaluation — not a
+          here is the direct result of solving the problems identified during evaluation, not a
           measured outcome.
         </p>
         <TagList

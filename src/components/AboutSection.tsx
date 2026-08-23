@@ -23,11 +23,11 @@ export default function AboutSection() {
       <div className="container">
         <div ref={introRef} className={`${styles.intro} reveal${introRevealed ? ' is-in' : ''}`}>
           <span className="eyebrow">About</span>
-          <h2 className={styles.heading}>Asmaa Wafik — Product/UX Designer</h2>
+          <h2 className={styles.heading}>Asmaa Wafik, Product/UX Designer</h2>
           <p className={styles.bio}>
-            I design clear, usable products across a wide range of types — POS systems, enterprise
+            I design clear, usable products across a wide range of types: POS systems, enterprise
             ERP platforms, mobile apps, and websites. I usually work within product teams,
-            contributing to specific screens, flows, and features — and I&rsquo;ve also taken a
+            contributing to specific screens, flows, and features, and I&rsquo;ve also taken a
             project from concept to full ownership on my own. Either way, my process stays the
             same: understand the problem, design and test the solution, then follow through past
             handoff to make sure what ships actually works.

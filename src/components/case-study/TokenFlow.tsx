@@ -17,7 +17,7 @@ export default function TokenFlow({
             <span className={`${styles.swatch} ${styles.swatchLg}`} />
           </div>
         </div>
-        <p className={styles.nodeCaption}>Value tokens — a spacing &amp; sizing scale</p>
+        <p className={styles.nodeCaption}>Value tokens, a spacing &amp; sizing scale</p>
       </div>
 
       <span className={styles.arrow} aria-hidden="true">→</span>

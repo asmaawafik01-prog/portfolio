@@ -27,7 +27,7 @@ export default function ScreenGallery({
         <div className={styles.item} key={screen.src}>
           <Frame
             src={screen.src}
-            alt={`${screen.step} — ${screen.caption}`}
+            alt={`${screen.step}: ${screen.caption}`}
             ratio={screen.ratio}
           />
           <p className={styles.caption}>

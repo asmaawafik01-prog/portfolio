@@ -37,7 +37,7 @@ const projects: Project[] = [
     type: 'Touch-first kiosk ordering',
     platform: 'Kiosk',
     description:
-      'Designing a touch-first ordering experience — and the design-system foundation it exposed a gap in.',
+      'Designing a touch-first ordering experience, and the design-system foundation it exposed a gap in.',
     image: '/images/highlights/kiosk/02-menu.png',
     device: 'kiosk',
     ratio: 1080 / 1920,

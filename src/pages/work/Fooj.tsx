@@ -13,20 +13,20 @@ const IMG = (name: string) => `/images/fooj/${name}`
 const RATIO = 0.4613
 
 const galleryScreens: GalleryScreen[] = [
-  { src: IMG('01_horse_profile.png'), step: '01', caption: 'Horse profile — breed, lineage, and photos.', ratio: RATIO },
+  { src: IMG('01_horse_profile.png'), step: '01', caption: 'Horse profile: breed, lineage, and photos.', ratio: RATIO },
   { src: IMG('02_horse_history_a.png'), step: '02', caption: 'Horse health & training history, filterable by type.', ratio: RATIO },
-  { src: IMG('03_horse_history_b.png'), step: '03', caption: 'Health & training history — a second view.', ratio: RATIO },
-  { src: IMG('04_horse_history_c.png'), step: '04', caption: 'Health & training history — a third view.', ratio: RATIO },
-  { src: IMG('07_map_discovery.png'), step: '05', caption: 'Map discovery — nearby stables.', ratio: RATIO },
-  { src: IMG('09_stable_detail_rooms.png'), step: '06', caption: 'Stable profile — room pricing and amenities.', ratio: RATIO },
-  { src: IMG('08_booking_service_active.png'), step: '07', caption: 'Active booking — an ongoing boarding service.', ratio: RATIO },
-  { src: IMG('05_stable_rooms_list.png'), step: '08', caption: 'Rooms list — capacity shown with a progress-bar pattern.', ratio: RATIO },
-  { src: IMG('06_room_detail.png'), step: '09', caption: 'Room detail — occupancy tracked per individual stall.', ratio: RATIO },
-  { src: IMG('13_owner_dashboard.png'), step: '10', caption: 'Stable owner dashboard — revenue, expenses, and recent transactions.', ratio: RATIO },
-  { src: IMG('10_transactions_expense.png'), step: '11', caption: 'Transactions — expense state.', ratio: RATIO },
-  { src: IMG('11_transactions_income.png'), step: '12', caption: 'Transactions — income state.', ratio: RATIO },
-  { src: IMG('12_income_statement.png'), step: '13', caption: 'Income statement — net income by category.', ratio: RATIO },
-  { src: IMG('14_add_transaction.png'), step: '14', caption: 'Add transaction — logging revenue or expense by category.', ratio: RATIO },
+  { src: IMG('03_horse_history_b.png'), step: '03', caption: 'Health & training history, a second view.', ratio: RATIO },
+  { src: IMG('04_horse_history_c.png'), step: '04', caption: 'Health & training history, a third view.', ratio: RATIO },
+  { src: IMG('07_map_discovery.png'), step: '05', caption: 'Map discovery: nearby stables.', ratio: RATIO },
+  { src: IMG('09_stable_detail_rooms.png'), step: '06', caption: 'Stable profile: room pricing and amenities.', ratio: RATIO },
+  { src: IMG('08_booking_service_active.png'), step: '07', caption: 'Active booking: an ongoing boarding service.', ratio: RATIO },
+  { src: IMG('05_stable_rooms_list.png'), step: '08', caption: 'Rooms list: capacity shown with a progress-bar pattern.', ratio: RATIO },
+  { src: IMG('06_room_detail.png'), step: '09', caption: 'Room detail: occupancy tracked per individual stall.', ratio: RATIO },
+  { src: IMG('13_owner_dashboard.png'), step: '10', caption: 'Stable owner dashboard: revenue, expenses, and recent transactions.', ratio: RATIO },
+  { src: IMG('10_transactions_expense.png'), step: '11', caption: 'Transactions: expense state.', ratio: RATIO },
+  { src: IMG('11_transactions_income.png'), step: '12', caption: 'Transactions: income state.', ratio: RATIO },
+  { src: IMG('12_income_statement.png'), step: '13', caption: 'Income statement: net income by category.', ratio: RATIO },
+  { src: IMG('14_add_transaction.png'), step: '14', caption: 'Add transaction: logging revenue or expense by category.', ratio: RATIO },
 ]
 
 export default function Fooj() {
@@ -35,8 +35,8 @@ export default function Fooj() {
       <CaseHeader
         eyebrow="Case Study 02"
         title="Fooj"
-        subtitle="Two-sided marketplace app — 2025"
-        role="Role: UI/UX Designer — started as part of a team, later managed the product design independently"
+        subtitle="Two-sided marketplace app, 2025"
+        role="Role: UI/UX Designer, started as part of a team, later managed the product design independently"
         meta={['Mobile app', 'Designed in Figma']}
         heroImage={IMG('07_map_discovery.png')}
         heroAlt="Fooj map discovery screen showing nearby stables"
@@ -56,8 +56,8 @@ export default function Fooj() {
       <CaseSection eyebrow="The Challenge" heading="A genuinely two-sided product" alt>
         <p>
           This was a genuinely two-sided product: horse owners and stable owners have very
-          different needs, and the app had to serve both — discovery and booking for one side,
-          inventory and business management for the other — within a single coherent system.
+          different needs, and the app had to serve both: discovery and booking for one side,
+          inventory and business management for the other, all within a single coherent system.
         </p>
       </CaseSection>
 
@@ -75,7 +75,7 @@ export default function Fooj() {
             <DecisionBlock
               index="01"
               title="Horse Owner journey."
-              text="Create account → Add horse profile → Discover nearby stables (with search & filters) → Stable profile → Room details → Select date & horse → Confirm booking → Manage horses & bookings. Horse profiles and room/stable profiles were designed as two distinct entity types that needed to be matched against each other — closer to a two-sided matching system than a simple booking form."
+              text="Create account → Add horse profile → Discover nearby stables (with search & filters) → Stable profile → Room details → Select date & horse → Confirm booking → Manage horses & bookings. Horse profiles and room/stable profiles were designed as two distinct entity types that needed to be matched against each other, closer to a two-sided matching system than a simple booking form."
               images={[
                 { src: IMG('01_horse_profile.png'), alt: 'Horse profile', ratio: RATIO },
                 { src: IMG('07_map_discovery.png'), alt: 'Map discovery', ratio: RATIO },
@@ -101,7 +101,7 @@ export default function Fooj() {
             <DecisionBlock
               index="04"
               title="Financial management, connected to operations."
-              text="The Transactions feature let stable owners log revenue and expenses tied to specific horses, rooms, or cost centers — turning a booking app into a lightweight operational tool for stable owners."
+              text="The Transactions feature let stable owners log revenue and expenses tied to specific horses, rooms, or cost centers, turning a booking app into a lightweight operational tool for stable owners."
               images={[
                 { src: IMG('10_transactions_expense.png'), alt: 'Transactions expense state', ratio: RATIO },
                 { src: IMG('11_transactions_income.png'), alt: 'Transactions income state', ratio: RATIO },
@@ -164,7 +164,7 @@ export default function Fooj() {
         <p>
           Fooj was published and released. I conducted usability testing on the live product
           from a real user perspective, going through the main journeys to identify usability
-          issues. No specific business metrics or user numbers are available — the outcome
+          issues. No specific business metrics or user numbers are available. The outcome
           here is best represented through the design-and-validate process itself rather than
           quantified impact.
         </p>

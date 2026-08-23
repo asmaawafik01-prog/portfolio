@@ -40,7 +40,7 @@ export default function ProjectCard({ project, index = 0 }: { project: Project; 
         <div className={`${styles.mockup} ${styles[MOCKUP_CLASS[project.device]]}`}>
           <Frame
             src={project.image}
-            alt={`${project.name} — ${project.type} screen`}
+            alt={`${project.name}, ${project.type} screen`}
             ratio={project.ratio}
             compact={project.compact}
           />

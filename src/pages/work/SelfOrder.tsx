@@ -13,16 +13,16 @@ const IMG = (name: string) => `/images/highlights/kiosk/${name}`
 const RATIO = 1080 / 1920
 
 const flowScreens: GalleryScreen[] = [
-  { src: IMG('01-welcome.png'), step: '01', caption: 'Welcome — choose dine-in or takeaway.', ratio: RATIO },
-  { src: IMG('02-menu.png'), step: '02', caption: 'Browse menu — categories and quick filters.', ratio: RATIO },
-  { src: IMG('03-item-detail.png'), step: '03', caption: 'Customize — a side panel keeps the menu in view.', ratio: RATIO },
-  { src: IMG('04-order-review.png'), step: '04', caption: 'Review order — same panel pattern, full context kept.', ratio: RATIO },
-  { src: IMG('05-payment.png'), step: '05', caption: 'Pay — one clear method selection.', ratio: RATIO },
+  { src: IMG('01-welcome.png'), step: '01', caption: 'Welcome: choose dine-in or takeaway.', ratio: RATIO },
+  { src: IMG('02-menu.png'), step: '02', caption: 'Browse menu: categories and quick filters.', ratio: RATIO },
+  { src: IMG('03-item-detail.png'), step: '03', caption: 'Customize: a side panel keeps the menu in view.', ratio: RATIO },
+  { src: IMG('04-order-review.png'), step: '04', caption: 'Review order: same panel pattern, full context kept.', ratio: RATIO },
+  { src: IMG('05-payment.png'), step: '05', caption: 'Pay: one clear method selection.', ratio: RATIO },
 ]
 
 const finalScreens: GalleryScreen[] = [
-  { src: IMG('02-menu.png'), step: 'Menu', caption: 'The main ordering surface — category rail, filter chips, and an evenly spaced item grid.', ratio: RATIO },
-  { src: IMG('03-item-detail.png'), step: 'Item detail', caption: 'Ingredients, add-ons, and quantity — all editable without leaving the menu behind.', ratio: RATIO },
+  { src: IMG('02-menu.png'), step: 'Menu', caption: 'The main ordering surface: category rail, filter chips, and an evenly spaced item grid.', ratio: RATIO },
+  { src: IMG('03-item-detail.png'), step: 'Item detail', caption: 'Ingredients, add-ons, and quantity, all editable without leaving the menu behind.', ratio: RATIO },
   { src: IMG('04-order-review.png'), step: 'Order review', caption: 'The full order, reviewable in the same panel pattern used throughout.', ratio: RATIO },
   { src: IMG('05-payment.png'), step: 'Payment', caption: 'Four payment methods, each a full-width, unambiguous tap target.', ratio: RATIO },
 ]
@@ -31,7 +31,7 @@ export default function SelfOrder() {
   return (
     <>
       <CaseHeader
-        eyebrow="Case Study 03 — Self-Order Kiosk"
+        eyebrow="Case Study 03: Self-Order Kiosk"
         title="Designing for touch, with no playbook to follow."
         subtitle="I designed the Self-Order Kiosk experience while researching touch-target sizing and helping build the design-system foundation behind it."
         role="Role: Product Designer"
@@ -46,7 +46,7 @@ export default function SelfOrder() {
         <p>
           The Self-Order experience had few existing references for kiosk sizing, touch targets,
           or scalable UI foundations. Key decisions couldn&rsquo;t just be copied from an existing
-          system — they had to be figured out.
+          system. They had to be figured out.
         </p>
       </CaseSection>
 
@@ -102,7 +102,7 @@ export default function SelfOrder() {
               {[
                 {
                   label: 'Full-row tap targets',
-                  text: 'Selection options use the entire row, not just the radio circle — dine-in/takeaway, payment method.',
+                  text: 'Selection options use the entire row, not just the radio circle: dine-in/takeaway, payment method.',
                 },
                 {
                   label: 'Evenly spaced grid',
@@ -162,14 +162,14 @@ export default function SelfOrder() {
             <DecisionTriple
               index="02"
               decision="Cart review reuses the exact same panel pattern."
-              why="One interaction, learned once and reused everywhere — less to figure out under time pressure."
+              why="One interaction, learned once and reused everywhere, less to figure out under time pressure."
               image={{ src: IMG('04-order-review.png'), alt: 'Order review panel over the dimmed menu', ratio: RATIO }}
               Frame={KioskFrame}
             />
             <DecisionTriple
               index="03"
               decision="Every screen ends in a single, unmistakable action."
-              why="No hover states, no second guesses — kiosk interactions need to be obvious at a glance."
+              why="No hover states, no second guesses. Kiosk interactions need to be obvious at a glance."
               image={{ src: IMG('01-welcome.png'), alt: 'Welcome screen with one primary action', ratio: RATIO }}
               Frame={KioskFrame}
             />
@@ -180,7 +180,7 @@ export default function SelfOrder() {
       <CaseSection eyebrow="The System Problem" heading="Then the same problem showed up underneath the UI.">
         <p>
           While designing the kiosk, sizing and spacing decisions kept getting made screen by
-          screen, with no shared reference to check against — a Design System gap, not just a
+          screen, with no shared reference to check against. A Design System gap, not just a
           kiosk problem.
         </p>
         <div style={{ marginTop: 28 }}>
@@ -207,7 +207,7 @@ export default function SelfOrder() {
               marginBottom: 4,
             }}
           >
-            Not theoretical — it&rsquo;s in the product.
+            Not theoretical. It&rsquo;s in the product.
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: 15.5, maxWidth: 560, marginBottom: 36 }}>
             The value tokens weren&rsquo;t just documentation. I used them directly to build the
