@@ -23,7 +23,16 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/work/pos" element={<Pos />} />
           <Route path="/work/self-order" element={<SelfOrder />} />
           <Route path="/work/:slug" element={<ComingSoon title="Case Study" />} />
-          <Route path="*" element={<ComingSoon title="Page not found" />} />
+          <Route
+            path="*"
+            element={
+              <ComingSoon
+                title="Page not found"
+                eyebrow="404"
+                message="That page doesn't exist. It may have moved or the link may be wrong."
+              />
+            }
+          />
         </Route>
       </Routes>
     </BrowserRouter>
