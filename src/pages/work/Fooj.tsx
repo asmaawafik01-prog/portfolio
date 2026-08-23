@@ -36,7 +36,7 @@ export default function Fooj() {
         eyebrow="Case Study 02"
         title="Fooj"
         subtitle="Two-sided marketplace app, 2025"
-        role="Role: UI/UX Designer, started as part of a team, later managed the product design independently"
+        role="I designed the UX/UI for both sides of Fooj. The project started as a team effort, and I later took over as the sole product designer, owning the direction independently."
         meta={['Mobile app', 'Designed in Figma']}
         heroImage={IMG('07_map_discovery.png')}
         heroAlt="Fooj map discovery screen showing nearby stables"

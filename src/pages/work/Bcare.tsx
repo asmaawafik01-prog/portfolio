@@ -75,7 +75,7 @@ export default function Bcare() {
         eyebrow="Case Study 01"
         title="Bcare"
         subtitle="Healthcare booking app, 2026"
-        role="Role: UI/UX Designer (designed the app end-to-end)"
+        role="I designed the complete Bcare experience end-to-end, solo, from prescription scanning through booking, family management, and order tracking."
         meta={['Mobile app', 'Designed in Figma']}
         heroImage={IMG('01_scan_prescription.png')}
         heroAlt="Bcare prescription scanning screen"

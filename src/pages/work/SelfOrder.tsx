@@ -34,7 +34,7 @@ export default function SelfOrder() {
         eyebrow="Case Study 03: Self-Order Kiosk"
         title="Designing for touch, with no playbook to follow."
         subtitle="I designed the Self-Order Kiosk experience while researching touch-target sizing and helping build the design-system foundation behind it."
-        role="Role: Product Designer"
+        role="I owned the Self-Order UX/UI design and the touch-target research behind it. When I spotted a gap in the design system, I raised it with the team and helped build the new value-token foundation that resulted."
         meta={['Focus: UX/UI · Research · Design System', 'Product: Self-Order Kiosk']}
         heroImage={IMG('02-menu.png')}
         heroAlt="Self-Order Kiosk menu screen, a touch-first grid of dishes with category tabs"

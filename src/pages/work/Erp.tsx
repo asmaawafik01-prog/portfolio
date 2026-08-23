@@ -72,15 +72,18 @@ export default function Erp() {
                 designing and evolving experiences while helping maintain consistency across the
                 product.
               </p>
-              <p className={heroStyles.subtitle} style={{ color: 'var(--text-muted)', fontWeight: 500 }}>
-                Role: Product Designer
+              <p className={heroStyles.ownership}>
+                I designed screens across nine ERP modules as part of a larger product team,
+                working closely with business stakeholders on requirements. When I spotted gaps
+                beyond my assigned screens, I raised them and proposed solutions, including a
+                reusable input pattern that&rsquo;s now used beyond my own work.
               </p>
               <div className={heroStyles.metaRow}>
                 <span className={heroStyles.metaPill}>
                   Focus: UX/UI · Complex Workflows · Design System · Responsive Design
                 </span>
                 <span className={heroStyles.metaPill}>Product: ERP Platform</span>
-                <span className={heroStyles.metaPill}>Mini Case Study</span>
+                <span className={heroStyles.metaPill}>Case Snapshot</span>
               </div>
             </div>
             <div className={styles.heroCollage}>

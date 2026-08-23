@@ -22,9 +22,9 @@ export default function Pos() {
       <CaseHeader
         eyebrow="Product Highlight"
         title="Ored POS"
-        subtitle="From legacy screens to a clearer retail experience."
-        role="Role: UI/UX Designer"
-        meta={['Web/Tablet', 'POS Redesign', 'Mini Case Study']}
+        subtitle="From legacy screens to a clearer POS experience."
+        role="I own this redesign end-to-end: evaluating the existing product firsthand, identifying what wasn't working, and redesigning the core POS workflows myself."
+        meta={['Web/Tablet', 'POS Redesign', 'Case Snapshot']}
         heroImage={IMG('05_table_screen_after.png')}
         heroAlt="Ored POS redesigned table screen, color-coded by occupancy"
         heroRatio={RATIO_AFTER}
@@ -63,7 +63,7 @@ export default function Pos() {
 
       <CaseSection
         eyebrow="02: The Redesign"
-        heading="A familiar POS, redesigned for a faster retail experience."
+        heading="A familiar POS, redesigned for a faster, clearer experience."
         alt
         wide
       >
@@ -149,7 +149,7 @@ export default function Pos() {
         </div>
       </section>
 
-      <CaseSection eyebrow="04: The Impact" heading="A clearer, more efficient retail workflow" alt>
+      <CaseSection eyebrow="04: The Impact" heading="A clearer, more efficient POS workflow" alt>
         <p>
           Redesigned an eight-column, no-hierarchy data table into a color-coded, grouped
           breakdown, adopted as the team&rsquo;s active direction for the POS redesign. It hasn&rsquo;t

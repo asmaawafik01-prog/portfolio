@@ -41,9 +41,7 @@ export default function CaseHeader({
             <span className="eyebrow">{eyebrow}</span>
             <h1 className={styles.title}>{title}</h1>
             <p className={styles.subtitle}>{subtitle}</p>
-            <p className={styles.subtitle} style={{ color: 'var(--text-muted)', fontWeight: 500 }}>
-              {role}
-            </p>
+            <p className={styles.ownership}>{role}</p>
             <div className={styles.metaRow}>
               {meta.map((item) => (
                 <span className={styles.metaPill} key={item}>

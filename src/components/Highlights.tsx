@@ -170,7 +170,7 @@ export default function Highlights() {
           <span className="eyebrow">Highlights</span>
           <h2 className={styles.heading}>More selected work</h2>
           <p className={styles.sub}>
-            Smaller pieces of work shown with a lighter treatment, not full case studies.
+            Additional projects and contributions, presented in brief.
           </p>
         </div>
         <div ref={gridRef} className={styles.grid}>
@@ -275,7 +275,7 @@ export default function Highlights() {
                     </div>
                   </div>
                   <span className={styles.miniCaseLink}>
-                    View mini case study <span aria-hidden="true">→</span>
+                    View case snapshot <span aria-hidden="true">→</span>
                   </span>
                 </Link>
               )
@@ -352,7 +352,7 @@ export default function Highlights() {
                     </div>
                   </div>
                   <span className={styles.miniCaseLink}>
-                    View mini case study <span aria-hidden="true">→</span>
+                    View case snapshot <span aria-hidden="true">→</span>
                   </span>
                 </Link>
               )
