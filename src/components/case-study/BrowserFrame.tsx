@@ -6,6 +6,7 @@ export default function BrowserFrame({
   alt,
   ratio = 1.4,
   fit = 'contain',
+  priority = false,
 }: {
   src: string
   alt: string
@@ -20,8 +21,11 @@ export default function BrowserFrame({
    * pass a `ratio` matching the desired crop and this shows the top of the page.
    */
   fit?: 'contain' | 'cover'
+  /** For above-the-fold hero usage — loads eagerly and skips the scroll-triggered reveal. */
+  priority?: boolean
 }) {
   const { ref, show, onLoad } = useScreenReveal<HTMLDivElement>()
+  const isShown = priority || show
   return (
     <div className={styles.frame}>
       <div className={styles.chrome}>
@@ -34,10 +38,17 @@ export default function BrowserFrame({
       </div>
       <div
         ref={ref}
-        className={`${styles.screen} reveal-screen${show ? ' is-in' : ''}`}
+        className={`${styles.screen} reveal-screen${isShown ? ' is-in' : ''}`}
         style={{ aspectRatio: ratio }}
       >
-        <img src={src} alt={alt} loading="lazy" decoding="async" onLoad={onLoad} style={{ objectFit: fit }} />
+        <img
+          src={src}
+          alt={alt}
+          loading={priority ? 'eager' : 'lazy'}
+          decoding="async"
+          onLoad={onLoad}
+          style={{ objectFit: fit }}
+        />
       </div>
     </div>
   )

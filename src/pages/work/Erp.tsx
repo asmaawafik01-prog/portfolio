@@ -91,21 +91,25 @@ export default function Erp() {
                 src={IMG('14_payment_in_filled.png')}
                 alt="Payment In screen, Finance module"
                 ratio={RATIO('14_payment_in_filled.png')}
+                priority
               />
               <BrowserFrame
                 src={IMG('05_vendor_entry.png')}
                 alt="Vendor entry screen, Purchase module"
                 ratio={RATIO('05_vendor_entry.png')}
+                priority
               />
               <BrowserFrame
                 src={IMG('10_customer_definition.png')}
                 alt="Customer definition screen, Sales module"
                 ratio={RATIO('10_customer_definition.png')}
+                priority
               />
               <BrowserFrame
                 src={IMG('06_journal_entry_a.png')}
                 alt="General Journal screen, Accounting module"
                 ratio={RATIO('06_journal_entry_a.png')}
+                priority
               />
             </div>
           </div>

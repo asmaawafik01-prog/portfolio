@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import PhoneFrame from './PhoneFrame'
 import styles from './CaseHeader.module.css'
 
-type FrameProps = { src: string; alt: string; ratio?: number }
+type FrameProps = { src: string; alt: string; ratio?: number; priority?: boolean }
 
 export default function CaseHeader({
   eyebrow,
@@ -51,7 +51,7 @@ export default function CaseHeader({
             </div>
           </div>
           <div className={`${styles.heroFrame} ${wide ? styles.heroFrameWide : ''}`}>
-            <Frame src={heroImage} alt={heroAlt} ratio={heroRatio} />
+            <Frame src={heroImage} alt={heroAlt} ratio={heroRatio} priority />
           </div>
         </div>
       </div>

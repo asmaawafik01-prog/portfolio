@@ -17,6 +17,8 @@ interface BeforeAfterHighlight {
 interface MiniCaseHighlight {
   kind: 'miniCase'
   tag: string
+  /** Short reason this is shown as a brief snapshot instead of a full case study. */
+  note?: string
   title: string
   description: string
   points: string[]
@@ -46,6 +48,8 @@ interface GalleryHighlight {
 interface FeaturedCaseHighlight {
   kind: 'featuredCase'
   tag: string
+  /** Short reason this is shown as a brief snapshot instead of a full case study. */
+  note?: string
   title: string
   description: string
   points: string[]
@@ -86,6 +90,7 @@ const highlights: Highlight[] = [
   {
     kind: 'featuredCase',
     tag: 'Microtec ERP',
+    note: 'Live product, shown as a brief overview',
     title: 'One product. Multiple workflows. One consistent experience.',
     description:
       'A multi-module ERP platform. I designed and evolved experiences across Finance, Sales, Purchase, and more, translating business requirements into UI/UX solutions and contributing to the shared Design System along the way.',
@@ -102,9 +107,10 @@ const highlights: Highlight[] = [
   {
     kind: 'miniCase',
     tag: 'Ored POS',
-    title: 'From legacy screens to a clearer retail experience.',
+    note: 'Not yet shipped, shown as a brief overview',
+    title: 'From legacy screens to a clearer POS experience.',
     description:
-      'Ored is a live, in-use POS. I evaluated the existing product, identified where its hierarchy and interactions broke down in everyday tasks, and redesigned the core retail workflows to resolve them.',
+      'Ored is a live, in-use POS. I evaluated the existing product, identified where its hierarchy and interactions broke down in everyday tasks, and redesigned the core workflows to resolve them.',
     points: ['Clearer hierarchy', 'Better grouping', 'More efficient interactions', 'Updated visual language'],
     before: { src: POS('before_02_table_screen.png'), ratio: 2560 / 1600 },
     after: { src: POS('03_order_list_after.png'), ratio: 3840 / 2160 },
@@ -237,6 +243,7 @@ export default function Highlights() {
                     <div className={styles.galleryHeader}>
                       <div>
                         <span className={styles.tag}>{item.tag}</span>
+                        {item.note && <span className={styles.note}> · {item.note}</span>}
                         <h3 className={styles.title} style={{ marginTop: 8 }}>
                           {item.title}
                         </h3>
@@ -291,6 +298,7 @@ export default function Highlights() {
                 >
                   <div className={styles.compareBody}>
                     <span className={styles.tag}>{item.tag}</span>
+                    {item.note && <span className={styles.note}> · {item.note}</span>}
                     <h3 className={styles.title}>{item.title}</h3>
                     <p className={styles.compareDesc}>{item.description}</p>
                     <ul className={styles.miniPoints}>

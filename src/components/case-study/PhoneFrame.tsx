@@ -7,6 +7,7 @@ export default function PhoneFrame({
   ratio = 0.462,
   align = 'top',
   compact = false,
+  priority = false,
 }: {
   src: string
   alt: string
@@ -26,20 +27,23 @@ export default function PhoneFrame({
   compact?: boolean
   /** Accepted for signature parity with BrowserFrame when used interchangeably; unused here. */
   fit?: 'contain' | 'cover'
+  /** For above-the-fold hero usage — loads eagerly and skips the scroll-triggered reveal. */
+  priority?: boolean
 }) {
   const { ref, show, onLoad } = useScreenReveal<HTMLDivElement>()
+  const isShown = priority || show
   return (
     <div className={`${styles.frame} ${compact ? styles.frameCompact : ''}`}>
       <div className={styles.notch} aria-hidden="true" />
       <div
         ref={ref}
-        className={`${styles.screen} reveal-screen${show ? ' is-in' : ''}`}
+        className={`${styles.screen} reveal-screen${isShown ? ' is-in' : ''}`}
         style={{ aspectRatio: ratio }}
       >
         <img
           src={src}
           alt={alt}
-          loading="lazy"
+          loading={priority ? 'eager' : 'lazy'}
           decoding="async"
           onLoad={onLoad}
           style={{ objectPosition: `center ${align}` }}
