@@ -51,6 +51,19 @@
   flex-wrap: wrap;
 }
 
+.emailFallback {
+  position: relative;
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin-top: 20px;
+}
+
+.emailFallback a {
+  color: var(--navy-bright-text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 @media (max-width: 640px) {
   .card {
     padding: 52px 24px;

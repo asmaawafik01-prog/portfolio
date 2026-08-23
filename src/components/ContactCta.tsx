@@ -29,6 +29,10 @@ export default function ContactCta({
               LinkedIn
             </a>
           </div>
+          <p className={styles.emailFallback}>
+            Or reach me directly at{' '}
+            <a href="mailto:asmaawafik01@gmail.com">asmaawafik01@gmail.com</a>
+          </p>
         </div>
       </div>
     </section>
