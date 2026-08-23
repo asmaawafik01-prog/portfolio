@@ -208,6 +208,16 @@ export default function Bcare() {
         </div>
       </section>
 
+      <CaseSection eyebrow="Impact" heading="What this design delivers." alt>
+        <p>
+          A complete, 18-screen booking flow designed from a single ambiguous input, a paper
+          prescription, with zero existing reference to build from. This includes a lab
+          coverage-matching system, three distinct booking paths, and a reusable UI component
+          set built from scratch to keep the experience consistent without a formal design
+          system in place.
+        </p>
+      </CaseSection>
+
       <CaseFooterNav nextSlug="fooj" nextName="Fooj" />
     </>
   )

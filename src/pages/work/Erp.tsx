@@ -111,7 +111,8 @@ export default function Erp() {
 
       <CaseSection eyebrow="01: The Scale" heading="Designing across a complex ERP ecosystem." wide>
         <p style={{ maxWidth: 640 }}>
-          Microtec ERP spans multiple business modules used daily by real operations teams. My
+          Microtec ERP spans multiple business modules used daily by teams across the business,
+          from finance to HR. My
           work sat across several of them, deepest in Finance &amp; Accounting, and contributing
           wherever else the team needed UI/UX support.
         </p>
@@ -292,13 +293,16 @@ export default function Erp() {
         </div>
       </section>
 
-      <CaseSection eyebrow="08: Outcome" heading="What this work contributed." alt>
-        <ul style={{ marginTop: 4, paddingLeft: 20, lineHeight: 1.9, color: 'var(--text-muted)' }}>
+      <CaseSection eyebrow="08: Impact" heading="What this work contributed." alt>
+        <p>
+          In production, used daily by teams across finance, sales, purchasing, and HR.
+          Designed across nine business modules, and proposed a new reusable input pattern, the
+          Flyout Input, that&rsquo;s since been adopted in screens beyond the ones I built.
+        </p>
+        <ul style={{ marginTop: 18, paddingLeft: 20, lineHeight: 1.9, color: 'var(--text-muted)' }}>
           <li>Contributed to a more consistent ERP experience across modules</li>
           <li>Designed complex business workflows in a clearer, more usable way</li>
           <li>Helped evolve the product when new needs or gaps were identified</li>
-          <li>Contributed reusable Design System foundations and patterns</li>
-          <li>Worked across different product areas while maintaining consistency</li>
           <li>Improved and adapted experiences across desktop and responsive/mobile contexts</li>
         </ul>
       </CaseSection>

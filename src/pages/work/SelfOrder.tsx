@@ -238,14 +238,18 @@ export default function SelfOrder() {
         </div>
       </section>
 
-      <CaseSection eyebrow="Outcome" heading="What this work left behind." alt>
-        <ul style={{ paddingLeft: 20, lineHeight: 1.9, color: 'var(--text-muted)' }}>
+      <CaseSection eyebrow="Impact" heading="What this work left behind." alt>
+        <p>
+          The kiosk itself is a design deliverable, not yet shipped, but the underlying problem
+          it surfaced was real: a missing value-token foundation in the shared Design System.
+          The tokens I helped build were adopted into the system and are now available for the
+          whole team to use.
+        </p>
+        <ul style={{ marginTop: 18, paddingLeft: 20, lineHeight: 1.9, color: 'var(--text-muted)' }}>
           <li>A complete Self-Order UI experience, designed end-to-end on the interaction/UI side</li>
           <li>Research-informed sizing and touch-target decisions</li>
-          <li>A new value-token foundation for the design system</li>
-          <li>More consistent UI decisions across screens</li>
+          <li>A new value-token foundation adopted into the shared design system</li>
           <li>Stronger scalability for future screens and components</li>
-          <li>Better alignment between the product UI and the design system</li>
         </ul>
       </CaseSection>
 

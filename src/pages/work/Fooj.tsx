@@ -160,13 +160,12 @@ export default function Fooj() {
         </div>
       </section>
 
-      <CaseSection eyebrow="Outcome" heading="Published, released, and tested by hand">
+      <CaseSection eyebrow="Impact" heading="Published, live, and tested by hand">
         <p>
-          Fooj was published and released. I conducted usability testing on the live product
-          from a real user perspective, going through the main journeys to identify usability
-          issues. No specific business metrics or user numbers are available. The outcome
-          here is best represented through the design-and-validate process itself rather than
-          quantified impact.
+          Published and live. I usability-tested the shipped product myself across both user
+          roles, horse owners and stable owners, spanning 14 screens and two fully distinct
+          journeys, going through the main flows to identify real usability issues rather than
+          relying on assumptions.
         </p>
       </CaseSection>
 

@@ -149,11 +149,12 @@ export default function Pos() {
         </div>
       </section>
 
-      <CaseSection eyebrow="04: The Improvement" heading="A clearer, more efficient retail workflow" alt>
+      <CaseSection eyebrow="04: The Impact" heading="A clearer, more efficient retail workflow" alt>
         <p>
-          This redesign hasn&rsquo;t shipped yet, so there&rsquo;s no usage data to report. What&rsquo;s
-          here is the direct result of solving the problems identified during evaluation, not a
-          measured outcome.
+          Redesigned an eight-column, no-hierarchy data table into a color-coded, grouped
+          breakdown, adopted as the team&rsquo;s active direction for the POS redesign. It hasn&rsquo;t
+          shipped yet, so there&rsquo;s no usage data to report, but every change traces directly
+          back to a problem identified during hands-on evaluation of the live product.
         </p>
         <TagList
           tone="accent"
