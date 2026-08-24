@@ -164,9 +164,6 @@ export default function Erp() {
               },
             ]}
           />
-          <p style={{ marginTop: 24, color: 'var(--text-muted)' }}>
-            I also contributed to the ERP product&rsquo;s public-facing website and Help System.
-          </p>
         </div>
       </CaseSection>
 
