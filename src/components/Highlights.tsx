@@ -12,6 +12,10 @@ interface BeforeAfterHighlight {
   description: string
   before: { src: string; ratio: number }
   after: { src: string; ratio: number }
+  /** 'cover' (default) crops the before shot to fill the shared box. Use 'contain' when the
+   *  before shot's own UI runs edge-to-edge (nothing to safely crop) so it fits by width
+   *  instead — a small letterbox beats losing real content. */
+  beforeFit?: 'contain' | 'cover'
 }
 
 interface MiniCaseHighlight {
@@ -137,6 +141,9 @@ const highlights: Highlight[] = [
       'Same POS system deployed for a retail client, redesigned the Sale screen for improved clarity and hierarchy.',
     before: { src: '/images/highlights/ogreen-before.png', ratio: 3830 / 1984 },
     after: { src: '/images/highlights/ogreen-after.png', ratio: 3840 / 2160 },
+    // The before shot's UI (ribbon badge, totals box) runs flush to both edges, so a width
+    // crop cuts into it — fit by width instead of cropping.
+    beforeFit: 'contain',
   },
   {
     kind: 'gallery',
@@ -275,9 +282,11 @@ export default function Highlights() {
     if (item.kind === 'miniCase' || item.kind === 'beforeAfter') {
       // Before/after shots rarely share a native ratio; using the "after" shot's ratio for
       // both frames keeps the pair the same size and vertically aligned instead of staggered.
-      // The "before" shot then crops to fill that box (its own ratio is usually close enough
-      // that nothing meaningful is lost) instead of letterboxing.
+      // The "before" shot then crops to fill that box by default — unless its own UI runs
+      // edge-to-edge (beforeFit: 'contain'), in which case cropping would cut real content,
+      // so it fits by width instead and accepts a small letterbox.
       const pairRatio = item.after.ratio
+      const beforeFit = item.beforeFit ?? 'cover'
       const compareBody = (
         <>
           <div className={styles.compareBody}>
@@ -312,7 +321,7 @@ export default function Highlights() {
                 }}
                 aria-label={`View larger: ${item.title} (before)`}
               >
-                <Shot src={item.before.src} alt={`${item.title} (before)`} ratio={pairRatio} fit="cover" />
+                <Shot src={item.before.src} alt={`${item.title} (before)`} ratio={pairRatio} fit={beforeFit} />
               </button>
             </div>
             <div className={styles.compareCol}>
