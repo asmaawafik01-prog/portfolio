@@ -57,6 +57,18 @@
         "value": "24px",
         "createdAt": "2026-08-24T14:18:11.525Z",
         "reason": "matches DESIGN.md's documented case-study heading clamp(24px, 3.2vw, 30px) verbatim; pre-existing, unrelated to this edit"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "34px",
+        "createdAt": "2026-08-24T14:55:10.112Z",
+        "reason": "pre-existing CaseHeader title clamp lower bound, unrelated to this session's edits; matches sitewide practical scale precedent"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "17px",
+        "createdAt": "2026-08-24T14:55:10.225Z",
+        "reason": "pre-existing CaseHeader subtitle size, unrelated to this session's edits; matches sitewide practical scale precedent"
       }
     ]
   }

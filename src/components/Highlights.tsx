@@ -286,7 +286,7 @@ export default function Highlights() {
       // edge-to-edge (beforeFit: 'contain'), in which case cropping would cut real content,
       // so it fits by width instead and accepts a small letterbox.
       const pairRatio = item.after.ratio
-      const beforeFit = item.beforeFit ?? 'cover'
+      const beforeFit: 'contain' | 'cover' = (item.kind === 'beforeAfter' && item.beforeFit) || 'cover'
       const compareBody = (
         <>
           <div className={styles.compareBody}>

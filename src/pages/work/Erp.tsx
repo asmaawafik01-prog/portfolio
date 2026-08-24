@@ -206,13 +206,14 @@ export default function Erp() {
             <div style={{ marginTop: 28 }}>
               <ModuleDiagram />
             </div>
-            <div className={styles.storyImages} style={{ marginTop: 28, maxWidth: 640 }}>
+            <div className={styles.storyImages} style={{ marginTop: 28 }}>
               <div>
                 <BrowserFrame
                   src={IMG('14_payment_in_filled.png')}
                   alt="Payment In screen, filled with data"
                   ratio={RATIO('14_payment_in_filled.png')}
                 />
+                <span className={styles.storyCaption}>Payment In</span>
               </div>
               <div>
                 <BrowserFrame
@@ -220,6 +221,7 @@ export default function Erp() {
                   alt="Payment Out screen with multi-currency support"
                   ratio={RATIO('09_payment_out_filled.png')}
                 />
+                <span className={styles.storyCaption}>Payment Out</span>
               </div>
             </div>
           </div>
@@ -244,6 +246,7 @@ export default function Erp() {
                     alt="Vendor entry screen, Purchase module"
                     ratio={RATIO('05_vendor_entry.png')}
                   />
+                  <span className={styles.storyCaption}>Vendor entry, Purchase module</span>
                 </div>
                 <div>
                   <BrowserFrame
@@ -251,6 +254,7 @@ export default function Erp() {
                     alt="Customer definition screen, Sales module"
                     ratio={RATIO('10_customer_definition.png')}
                   />
+                  <span className={styles.storyCaption}>Customer definition, Sales module</span>
                 </div>
               </div>
             </div>
