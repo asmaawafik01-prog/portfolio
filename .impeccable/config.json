@@ -1,0 +1,63 @@
+{
+  "buildPath": "comp",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-font-size",
+        "value": "15px",
+        "createdAt": "2026-08-24T07:35:15.789Z",
+        "reason": "pre-existing sitewide practical type scale used identically in ProjectCard, CaseHeader, DecisionBlock, TagList etc. before this session; DESIGN.md documents named roles (display/headline/title/body/label) not the full literal scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "12px",
+        "createdAt": "2026-08-24T07:35:16.017Z",
+        "reason": "pre-existing sitewide practical type scale used identically in ProjectCard, CaseHeader, DecisionBlock, TagList etc. before this session; DESIGN.md documents named roles (display/headline/title/body/label) not the full literal scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "18px",
+        "createdAt": "2026-08-24T07:35:16.325Z",
+        "reason": "pre-existing sitewide practical type scale used identically in ProjectCard, CaseHeader, DecisionBlock, TagList etc. before this session; DESIGN.md documents named roles (display/headline/title/body/label) not the full literal scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "14px",
+        "createdAt": "2026-08-24T07:35:16.568Z",
+        "reason": "pre-existing sitewide practical type scale used identically in ProjectCard, CaseHeader, DecisionBlock, TagList etc. before this session; DESIGN.md documents named roles (display/headline/title/body/label) not the full literal scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "14.5px",
+        "createdAt": "2026-08-24T07:35:16.786Z",
+        "reason": "pre-existing sitewide practical type scale used identically in ProjectCard, CaseHeader, DecisionBlock, TagList etc. before this session; DESIGN.md documents named roles (display/headline/title/body/label) not the full literal scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "11px",
+        "createdAt": "2026-08-24T07:35:17.000Z",
+        "reason": "pre-existing sitewide practical type scale used identically in ProjectCard, CaseHeader, DecisionBlock, TagList etc. before this session; DESIGN.md documents named roles (display/headline/title/body/label) not the full literal scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "12.5px",
+        "createdAt": "2026-08-24T07:35:17.213Z",
+        "reason": "pre-existing sitewide practical type scale used identically in ProjectCard, CaseHeader, DecisionBlock, TagList etc. before this session; DESIGN.md documents named roles (display/headline/title/body/label) not the full literal scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "13px",
+        "createdAt": "2026-08-24T07:35:17.423Z",
+        "reason": "pre-existing sitewide practical type scale used identically in ProjectCard, CaseHeader, DecisionBlock, TagList etc. before this session; DESIGN.md documents named roles (display/headline/title/body/label) not the full literal scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "24px",
+        "createdAt": "2026-08-24T14:18:11.525Z",
+        "reason": "matches DESIGN.md's documented case-study heading clamp(24px, 3.2vw, 30px) verbatim; pre-existing, unrelated to this edit"
+      }
+    ]
+  }
+}

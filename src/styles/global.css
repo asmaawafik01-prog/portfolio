@@ -129,79 +129,10 @@ h1, h2, h3, p {
   transform: none;
 }
 
-/* Device-screen "power on" — the site's signature entrance, applied inside every
-   Phone/Tablet/Browser/Kiosk frame's screen. A scanline sweeps once while the
-   screenshot fades up to its resting state. Only `transform` and `opacity` ever
-   animate here — both are compositor-only, so a gallery revealing several large
-   screenshots at once stays smooth instead of stuttering on every-frame repaint.
-   `.is-in` is applied only once the image has actually finished loading (see the
-   frame components), so the fade never has to "catch up" mid-transition. */
-.reveal-screen {
-  position: relative;
-}
-
-.reveal-screen img {
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.reveal-screen::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent calc(50% - 18px),
-    rgba(74, 111, 165, 0.85) 50%,
-    transparent calc(50% + 18px)
-  );
-  opacity: 0;
-  transform: translateY(-50%);
-  pointer-events: none;
-  z-index: 3;
-}
-
-.reveal-screen.is-in img {
-  opacity: 1;
-  transform: none;
-}
-
-.reveal-screen.is-in::after {
-  animation: reveal-scan 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
-}
-
-@keyframes reveal-scan {
-  0% {
-    transform: translateY(-50%);
-    opacity: 0;
-  }
-  15% {
-    opacity: 0.9;
-  }
-  85% {
-    opacity: 0.9;
-  }
-  100% {
-    transform: translateY(50%);
-    opacity: 0;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
     transform: none;
     transition: none;
-  }
-
-  .reveal-screen img {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-
-  .reveal-screen::after {
-    display: none;
   }
 }
