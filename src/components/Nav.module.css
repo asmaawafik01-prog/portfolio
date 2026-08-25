@@ -62,7 +62,7 @@
   background: var(--navy-deep-2);
   border: 1px solid var(--border-strong);
   padding: 9px 18px;
-  border-radius: 7px;
+  border-radius: 8px;
   transition: border-color 0.15s ease;
 }
 
