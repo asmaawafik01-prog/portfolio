@@ -71,36 +71,38 @@ export default function Nav() {
     }
   }, [menuOpen])
 
-  const navLinks = (
+  // The mobile dropdown always renders plain, unhighlighted links — no "current section"
+  // indicator there, only on the desktop inline nav.
+  const renderLinks = (showActive: boolean) => (
     <>
       <Link
         to="/"
-        className={`${styles.navLink} ${isActive('home') ? styles.active : ''}`}
-        aria-current={isActive('home') ? 'page' : undefined}
+        className={`${styles.navLink} ${showActive && isActive('home') ? styles.active : ''}`}
+        aria-current={showActive && isActive('home') ? 'page' : undefined}
         onClick={closeMenu}
       >
         Home
       </Link>
       <Link
         to="/#work"
-        className={`${styles.navLink} ${isActive('work') ? styles.active : ''}`}
-        aria-current={isActive('work') ? 'page' : undefined}
+        className={`${styles.navLink} ${showActive && isActive('work') ? styles.active : ''}`}
+        aria-current={showActive && isActive('work') ? 'page' : undefined}
         onClick={closeMenu}
       >
         Work
       </Link>
       <Link
         to="/#about"
-        className={`${styles.navLink} ${isActive('about') ? styles.active : ''}`}
-        aria-current={isActive('about') ? 'page' : undefined}
+        className={`${styles.navLink} ${showActive && isActive('about') ? styles.active : ''}`}
+        aria-current={showActive && isActive('about') ? 'page' : undefined}
         onClick={closeMenu}
       >
         About
       </Link>
       <Link
         to="/#contact"
-        className={`${styles.cta} ${isActive('contact') ? styles.active : ''}`}
-        aria-current={isActive('contact') ? 'page' : undefined}
+        className={`${styles.cta} ${showActive && isActive('contact') ? styles.active : ''}`}
+        aria-current={showActive && isActive('contact') ? 'page' : undefined}
         onClick={closeMenu}
       >
         Contact
@@ -114,7 +116,7 @@ export default function Nav() {
         <Link to="/" className={styles.logo}>
           Asmaa Wafik<span>.</span>
         </Link>
-        <nav className={styles.links}>{navLinks}</nav>
+        <nav className={styles.links}>{renderLinks(true)}</nav>
         <button
           type="button"
           className={`${styles.hamburger} ${menuOpen ? styles.hamburgerOpen : ''}`}
@@ -129,7 +131,7 @@ export default function Nav() {
       </div>
       {menuOpen && (
         <nav className={styles.mobileMenu}>
-          {navLinks}
+          {renderLinks(false)}
         </nav>
       )}
     </header>
