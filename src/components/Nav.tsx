@@ -53,8 +53,52 @@ function useActiveSection(pathname: string): SectionKey {
 export default function Nav() {
   const { pathname } = useLocation()
   const active = useActiveSection(pathname)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   const isActive = (key: SectionKey) => active === key
+  const closeMenu = () => setMenuOpen(false)
+
+  // Close the mobile menu on route/section change so it never stays open after navigating.
+  useEffect(() => {
+    setMenuOpen(false)
+  }, [pathname])
+
+  const navLinks = (
+    <>
+      <Link
+        to="/"
+        className={`${styles.navLink} ${isActive('home') ? styles.active : ''}`}
+        aria-current={isActive('home') ? 'page' : undefined}
+        onClick={closeMenu}
+      >
+        Home
+      </Link>
+      <Link
+        to="/#work"
+        className={`${styles.navLink} ${isActive('work') ? styles.active : ''}`}
+        aria-current={isActive('work') ? 'page' : undefined}
+        onClick={closeMenu}
+      >
+        Work
+      </Link>
+      <Link
+        to="/#about"
+        className={`${styles.navLink} ${isActive('about') ? styles.active : ''}`}
+        aria-current={isActive('about') ? 'page' : undefined}
+        onClick={closeMenu}
+      >
+        About
+      </Link>
+      <Link
+        to="/#contact"
+        className={`${styles.cta} ${isActive('contact') ? styles.active : ''}`}
+        aria-current={isActive('contact') ? 'page' : undefined}
+        onClick={closeMenu}
+      >
+        Contact
+      </Link>
+    </>
+  )
 
   return (
     <header className={styles.nav}>
@@ -62,37 +106,24 @@ export default function Nav() {
         <Link to="/" className={styles.logo}>
           Asmaa Wafik<span>.</span>
         </Link>
-        <nav className={styles.links}>
-          <Link
-            to="/"
-            className={`${styles.navLink} ${isActive('home') ? styles.active : ''}`}
-            aria-current={isActive('home') ? 'page' : undefined}
-          >
-            Home
-          </Link>
-          <Link
-            to="/#work"
-            className={`${styles.navLink} ${isActive('work') ? styles.active : ''}`}
-            aria-current={isActive('work') ? 'page' : undefined}
-          >
-            Work
-          </Link>
-          <Link
-            to="/#about"
-            className={`${styles.navLink} ${isActive('about') ? styles.active : ''}`}
-            aria-current={isActive('about') ? 'page' : undefined}
-          >
-            About
-          </Link>
-          <Link
-            to="/#contact"
-            className={`${styles.cta} ${isActive('contact') ? styles.active : ''}`}
-            aria-current={isActive('contact') ? 'page' : undefined}
-          >
-            Contact
-          </Link>
-        </nav>
+        <nav className={styles.links}>{navLinks}</nav>
+        <button
+          type="button"
+          className={`${styles.hamburger} ${menuOpen ? styles.hamburgerOpen : ''}`}
+          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((v) => !v)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
       </div>
+      {menuOpen && (
+        <nav className={styles.mobileMenu}>
+          {navLinks}
+        </nav>
+      )}
     </header>
   )
 }
