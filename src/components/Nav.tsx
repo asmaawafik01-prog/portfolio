@@ -63,6 +63,14 @@ export default function Nav() {
     setMenuOpen(false)
   }, [pathname])
 
+  // Lock background scroll while the full-screen mobile menu is open.
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [menuOpen])
+
   const navLinks = (
     <>
       <Link
@@ -112,7 +120,7 @@ export default function Nav() {
           className={`${styles.hamburger} ${menuOpen ? styles.hamburgerOpen : ''}`}
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
-          onClick={() => setMenuOpen((v) => !v)}
+          onClick={() => setMenuOpen(!menuOpen)}
         >
           <span />
           <span />
