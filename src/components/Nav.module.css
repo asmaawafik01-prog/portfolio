@@ -145,8 +145,18 @@
     color: var(--text);
   }
   .mobileMenu .cta {
-    justify-content: center;
-    margin-top: 12px;
+    justify-content: flex-start;
+    background: transparent;
+    border: none;
+    color: var(--text-muted) !important;
+    font-weight: 500;
+    padding: 14px 4px;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+  }
+
+  .mobileMenu .cta:hover {
+    border-color: var(--border);
   }
 }
 
