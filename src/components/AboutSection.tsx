@@ -2,7 +2,14 @@ import TagList from './case-study/TagList'
 import { useReveal } from '../hooks/useReveal'
 import styles from './AboutSection.module.css'
 
-const WHAT_I_DO = ['Wireframing', 'Prototyping', 'User Interface Design', 'User Experience Design', 'Usability Testing']
+const WHAT_I_DO = [
+  'Wireframing',
+  'Prototyping',
+  'User Interface Design',
+  'User Experience Design',
+  'Usability Testing',
+  'Arabic (RTL) & English (LTR) Interface Design',
+]
 const TOOLS = ['Figma', 'Adobe XD']
 
 const HIGHLIGHTS = [
@@ -26,7 +33,8 @@ export default function AboutSection() {
           <h2 className={styles.heading}>Asmaa Wafik, Product/UX Designer</h2>
           <p className={styles.bio}>
             I design clear, usable products across a wide range of types: POS systems, enterprise
-            ERP platforms, mobile apps, and websites. I usually work within product teams,
+            ERP platforms, mobile apps, and websites, working comfortably in both Arabic (RTL) and
+            English (LTR) interfaces. I usually work within product teams,
             contributing to specific screens, flows, and features, and I&rsquo;ve also taken a
             project from concept to full ownership on my own. Either way, my process stays the
             same: understand the problem, design and test the solution, then follow through past
