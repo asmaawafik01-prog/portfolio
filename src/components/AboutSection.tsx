@@ -10,7 +10,7 @@ const WHAT_I_DO = [
   'Usability Testing',
   'Arabic (RTL) & English (LTR) Interface Design',
 ]
-const TOOLS = ['Figma', 'Adobe XD']
+const TOOLS = ['Figma', 'FigJam', 'Adobe XD', 'Claude Design', 'Claude Code', 'Lovable', 'Pen.dev']
 
 const HIGHLIGHTS = [
   'Designed the end-to-end experience for Bcare, a healthcare booking app',
@@ -58,7 +58,7 @@ export default function AboutSection() {
           </div>
           <div className={styles.panelCol}>
             <span className="eyebrow">Tools</span>
-            <h3 className={styles.panelHeading}>Design tools</h3>
+            <h3 className={styles.panelHeading}>Design &amp; AI tools</h3>
             <TagList items={TOOLS} tone="accent" />
           </div>
         </div>
