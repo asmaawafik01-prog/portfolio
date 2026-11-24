@@ -10,7 +10,7 @@ const WHAT_I_DO = [
   'Usability Testing',
   'Arabic (RTL) & English (LTR) Interface Design',
 ]
-const TOOLS = ['Figma', 'FigJam', 'Adobe XD', 'Claude Design', 'Claude Code', 'Lovable', 'Pen.dev']
+const TOOLS = ['Figma', 'FigJam', 'Figma Make', 'Adobe XD', 'Claude Design', 'Claude Code', 'Lovable', 'Pen.dev']
 
 const HIGHLIGHTS = [
   'Designed the end-to-end experience for Bcare, a healthcare booking app',
