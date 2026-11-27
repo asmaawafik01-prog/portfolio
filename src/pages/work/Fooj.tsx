@@ -20,6 +20,7 @@ export default function Fooj() {
         { label: 'Team', value: 'Team, then sole designer' },
         { label: 'Year', value: '2025' },
       ]}
+      tags={['UX/UI design', 'Two user journeys', 'Usability testing', 'Product ownership']}
       hero={
         <ShotGrid
           priority
@@ -155,6 +156,10 @@ export default function Fooj() {
         ],
       }}
       impact={{
+        stats: [
+          { value: 2, label: 'user sides in one app' },
+          { value: 14, label: 'screens covered in usability testing' },
+        ],
         points: [
           { lead: 'Published and live', text: 'Both sides of the marketplace shipped in one app.' },
           { lead: 'Two journeys, one system', text: 'Horse owners and stable owners each have a complete path inside a single product.' },

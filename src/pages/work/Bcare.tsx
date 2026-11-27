@@ -55,6 +55,7 @@ export default function Bcare() {
         { label: 'Team', value: 'Solo project' },
         { label: 'Year', value: '2026' },
       ]}
+      tags={['Competitor analysis', 'User personas', 'UI design', 'Usability testing', 'Reusable components']}
       hero={
         <ShotGrid
           priority
@@ -196,6 +197,11 @@ export default function Bcare() {
         ],
       }}
       impact={{
+        stats: [
+          { value: 18, label: 'screens designed end-to-end' },
+          { value: 3, label: 'booking paths' },
+          { value: 2, label: 'ways in: browse or scan a prescription' },
+        ],
         points: [
           { lead: 'A complete booking flow', text: '18 screens designed from a single ambiguous input, a paper prescription, with no existing reference to build from.' },
           { lead: 'Lab coverage matching', text: 'Users can compare labs by how many of their required tests each one offers.' },

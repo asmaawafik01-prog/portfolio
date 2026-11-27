@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import PhoneFrame from './case-study/PhoneFrame'
 import TabletFrame from './case-study/TabletFrame'
 import BrowserFrame from './case-study/BrowserFrame'
@@ -20,6 +20,7 @@ export interface Project {
   device: 'phone' | 'tablet' | 'browser' | 'kiosk' | 'shot'
   ratio: number
   compact?: boolean
+  status: string
 }
 
 const FRAMES = { phone: PhoneFrame, tablet: TabletFrame, browser: BrowserFrame, kiosk: KioskFrame, shot: ShotFrame }
@@ -28,10 +29,12 @@ const MOCKUP_CLASS = { phone: 'mockupPhone', tablet: 'mockupTablet', browser: 'm
 export default function ProjectCard({ project, index = 0 }: { project: Project; index?: number }) {
   const Frame = FRAMES[project.device]
   const { ref, revealed } = useReveal<HTMLAnchorElement>()
+  const location = useLocation()
   return (
     <Link
       ref={ref}
       to={`/work/${project.slug}`}
+      state={{ background: location }}
       className={`${styles.card} reveal${revealed ? ' is-in' : ''}`}
       style={{ '--reveal-delay': `${Math.min(index, 4) * 90}ms` } as CSSProperties}
     >
@@ -51,6 +54,7 @@ export default function ProjectCard({ project, index = 0 }: { project: Project; 
           <span>{project.tag}</span>
           <span className={styles.metaDot} />
           <span>{project.platform}</span>
+          <span className={styles.status}>{project.status}</span>
         </div>
         <h3 className={styles.title}>{project.name}</h3>
         <p className={styles.desc}>{project.description}</p>

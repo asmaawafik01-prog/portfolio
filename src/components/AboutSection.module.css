@@ -61,6 +61,7 @@
 }
 
 .panelCol {
+  min-width: 0;
   padding: 32px 34px;
 }
 

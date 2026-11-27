@@ -1,4 +1,5 @@
 import TagList from './case-study/TagList'
+import ToolsMarquee, { type Tool } from './ToolsMarquee'
 import { useReveal } from '../hooks/useReveal'
 import styles from './AboutSection.module.css'
 
@@ -10,7 +11,16 @@ const WHAT_I_DO = [
   'Usability Testing',
   'Arabic (RTL) & English (LTR) Interface Design',
 ]
-const TOOLS = ['Figma', 'FigJam', 'Figma Make', 'Adobe XD', 'Claude Design', 'Claude Code', 'Lovable', 'Pen.dev']
+const TOOLS: Tool[] = [
+  { name: 'Figma', mark: 'F' },
+  { name: 'FigJam', mark: 'FJ' },
+  { name: 'Figma Make', mark: 'FM' },
+  { name: 'Adobe XD', mark: 'Xd' },
+  { name: 'Claude Design', mark: 'CD' },
+  { name: 'Claude Code', mark: 'CC' },
+  { name: 'Lovable', mark: 'L' },
+  { name: 'Pen.dev', mark: 'P' },
+]
 
 const HIGHLIGHTS = [
   'Designed the end-to-end experience for Bcare, a healthcare booking app',
@@ -30,7 +40,7 @@ export default function AboutSection() {
       <div className="container">
         <div ref={introRef} className={`${styles.intro} reveal${introRevealed ? ' is-in' : ''}`}>
           <span className="eyebrow">About</span>
-          <h2 className={styles.heading}>Asmaa Wafik, Product/UX Designer</h2>
+          <h2 className={styles.heading}>Asmaa Wafik, Product Designer</h2>
           <p className={styles.bio}>
             I design clear, usable products across a wide range of types: POS systems, enterprise
             ERP platforms, mobile apps, and websites, working comfortably in both Arabic (RTL) and
@@ -59,7 +69,7 @@ export default function AboutSection() {
           <div className={styles.panelCol}>
             <span className="eyebrow">Tools</span>
             <h3 className={styles.panelHeading}>Design &amp; AI tools</h3>
-            <TagList items={TOOLS} tone="accent" />
+            <ToolsMarquee tools={TOOLS} />
           </div>
         </div>
       </div>

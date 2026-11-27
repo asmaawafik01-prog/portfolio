@@ -17,6 +17,7 @@ export default function SelfOrder() {
         { label: 'Type', value: 'Self-service / Kiosk' },
         { label: 'Focus', value: 'UX/UI · Research · Design System' },
       ]}
+      tags={['Touch-target research', 'UX/UI design', 'Portrait & landscape', 'Testing with users', 'Value tokens', 'Design System']}
       hero={
         <ShotGrid
           priority
@@ -31,7 +32,7 @@ export default function SelfOrder() {
       context={{
         text: 'I owned the Self-Order UX/UI design and the touch-target research behind it. When I spotted a gap in the design system, I raised it with the team and helped build the new value-token foundation that resulted.',
         points: [
-          <><strong>Designed</strong> the Self-Order UX/UI and interaction flows.</>,
+          <><strong>Designed</strong> the Self-Order UX/UI and interaction flows, supporting both <strong>portrait and landscape</strong> orientations.</>,
           <><strong>Researched</strong> sizing and touch-target requirements for the kiosk experience.</>,
           <><strong>Built</strong> a new value-token foundation to support consistent UI decisions.</>,
           <><strong>Aligned</strong> with the team to validate the direction and move the system forward.</>,
@@ -124,12 +125,15 @@ export default function SelfOrder() {
         ],
       }}
       impact={{
+        stats: [
+          { value: 5, label: 'screens in the ordering flow' },
+          { value: 4, label: 'touch-first rules applied' },
+        ],
         points: [
           { lead: 'Design System foundation', text: 'The value tokens I helped build were adopted into the shared Design System and are available to the whole team.' },
           { lead: 'A complete Self-Order UI', text: 'Designed end-to-end on the interaction and UI side.' },
           { lead: 'Research-informed sizing', text: 'Sizing and touch-target decisions grounded in how a kiosk is used.' },
           { lead: 'Scalability', text: 'A stronger base for future screens and components.' },
-          { lead: 'Status', text: 'The kiosk itself is a design deliverable, not yet shipped.' },
         ],
         closing: 'I wasn’t just designing the interface. I was helping define the foundation it needed to work well.',
       }}

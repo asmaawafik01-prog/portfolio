@@ -26,3 +26,15 @@
     grid-template-columns: 1fr;
   }
 }
+
+.header {
+  text-align: center;
+  margin-inline: auto;
+}
+
+.header :global(.eyebrow) {
+  display: inline-block;
+  padding: 6px 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: 100px;
+}

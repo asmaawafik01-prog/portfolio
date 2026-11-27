@@ -1,4 +1,4 @@
-import CasePage, { ShotGrid } from '../../components/case-study/CasePage'
+import CasePage, { ProblemPairs, ShotGrid } from '../../components/case-study/CasePage'
 import BeforeAfter from '../../components/case-study/BeforeAfter'
 import BrowserFrame from '../../components/case-study/BrowserFrame'
 import AnnotatedFrame from '../../components/case-study/AnnotatedFrame'
@@ -21,6 +21,7 @@ export default function Pos() {
         { label: 'Type', value: 'POS / Web & Tablet' },
         { label: 'Focus', value: 'POS Redesign' },
       ]}
+      tags={['Research with employees', 'Heuristic review', 'Workflow redesign', 'Arabic RTL', 'Visual language']}
       hero={
         <ShotGrid
           priority
@@ -44,12 +45,19 @@ export default function Pos() {
           { lead: 'Too complex to use', text: 'Employees complained that the system was complicated.' },
           { lead: 'Long training', text: 'Training new employees on it took a long time.' },
           { lead: 'Load on the cashier', text: 'The complexity added to an already heavy workload, with speed and errors at stake.' },
-          { lead: 'Dense information hierarchy', text: 'Eight columns were given equal visual weight, with nothing showing what matters most.' },
           { lead: 'Crowded toolbar', text: 'Search, filters, and pagination were compressed into one dense toolbar.' },
-          { lead: 'Easy-to-miss status', text: 'Order status appeared only as small colored text.' },
           { lead: 'Legacy interactions', text: 'Hard-to-scan layouts, inefficient interactions, and inconsistent actions.' },
         ],
         extra: (
+          <>
+          <ProblemPairs
+            pairs={[
+              { problem: 'Eight columns were given equal visual weight, with nothing showing what matters most.', solution: 'Items, order details, payment and status sit in separate, grouped areas.' },
+              { problem: 'Order status appeared only as small colored text.', solution: 'Status has its own labelled block with a filled badge.' },
+              { problem: 'The table screen gave no read on occupancy.', solution: 'A color-coded floor layout shows occupancy, section and reservations at a glance.' },
+              { problem: 'Applying a discount meant a disconnected coupon modal.', solution: 'Coupons, loyalty points and wallet value fold into one panel on the item.' },
+            ]}
+          />
           <div style={{ marginTop: 28, maxWidth: 720 }}>
             <AnnotatedFrame
               src={IMG('before_02_table_screen.png')}
@@ -62,6 +70,7 @@ export default function Pos() {
               ]}
             />
           </div>
+          </>
         ),
       }}
       insights={[
@@ -86,13 +95,12 @@ export default function Pos() {
       ]}
       validation={{
         title: 'Grounded in the Live Product, Adopted by the Team',
-        intro: 'The redesign isn’t shipped yet, so validation so far comes from research on the current product and from the team.',
+        intro: 'Validation comes from research on the current product and from the team.',
         points: [
           { lead: 'Evaluation', text: 'I sat with employees and evaluated the existing product in real, everyday tasks, looking at cashier speed, errors, and training time.' },
           { lead: 'Traceability', text: 'Every change traces back to a problem found in that evaluation.' },
           { lead: 'Heuristic review', text: 'A later review of the old screens against usability heuristics flagged status shown as small colored text, a coupon modal that hides the order behind two look-alike buttons, and very small quantity controls.' },
           { lead: 'Result', text: 'The redesign is the team’s active direction for the POS.' },
-          { lead: 'Next step', text: 'Test the redesigned flows with cashiers and compare them with the current product.' },
         ],
       }}
       design={{
@@ -131,6 +139,10 @@ export default function Pos() {
         ],
       }}
       impact={{
+        stats: [
+          { value: 3, label: 'core workflows redesigned' },
+          { value: 4, label: 'problems paired with a solution' },
+        ],
         points: [
           { lead: 'Clearer hierarchy', text: 'An eight-column, no-hierarchy table became a color-coded, grouped breakdown, so primary information is easy to find.' },
           { lead: 'Efficient interactions', text: 'Fewer steps and less hunting, with key actions standing out.' },

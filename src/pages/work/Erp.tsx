@@ -37,6 +37,7 @@ export default function Erp() {
         { label: 'Team', value: 'Microtec' },
         { label: 'Focus', value: 'Complex Workflows · Design System' },
       ]}
+      tags={['Business requirements', 'Complex workflows', 'UX/UI design', 'Responsive design', 'Design System', 'Design QA']}
       hero={
         <ShotGrid
           priority
@@ -100,6 +101,7 @@ export default function Erp() {
         points: [
           { lead: 'Requirements', text: 'I worked closely with business stakeholders on requirements.' },
           { lead: 'Team alignment', text: 'Gaps I found, like the one behind the Flyout Input, were raised with the team and solved together.' },
+          { lead: 'Handoff & Design QA', text: 'I partnered with developers through design handoff and Design QA, catching UI inconsistencies and implementation issues after development and resolving them together.' },
           { lead: 'Adoption', text: 'The Flyout Input has since been adopted in screens beyond the ones I built.' },
           { lead: 'Launch', text: 'The ERP is in production, used daily by teams across finance, sales, purchasing, and HR.' },
         ],
@@ -149,8 +151,11 @@ export default function Erp() {
         ],
       }}
       impact={{
+        stats: [
+          { value: 9, label: 'business modules designed' },
+          { value: 4, label: 'business areas using it daily' },
+        ],
         points: [
-          { lead: 'Breadth', text: 'Designed across nine business modules.' },
           { lead: 'A reusable pattern', text: 'The Flyout Input gave the team a shared answer instead of a one-off fix.' },
           { lead: 'Consistency', text: 'A more consistent ERP experience across modules, on desktop and responsive/mobile.' },
         ],

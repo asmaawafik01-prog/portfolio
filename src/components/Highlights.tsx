@@ -1,5 +1,5 @@
 import { useState, type CSSProperties } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import ShotFrame from './case-study/ShotFrame'
 import Lightbox, { type LightboxImage } from './Lightbox'
 import { useReveal } from '../hooks/useReveal'
@@ -108,7 +108,7 @@ const highlights: Highlight[] = [
   {
     kind: 'featuredCase',
     tag: 'Microtec ERP',
-    note: 'Live product, shown as a brief overview',
+    note: 'In production',
     title: 'One product. Multiple workflows. One consistent experience.',
     description:
       'A multi-module ERP platform. I designed and evolved experiences across Finance, Sales, Purchase, and more, translating business requirements into UI/UX solutions and contributing to the shared Design System along the way.',
@@ -124,7 +124,7 @@ const highlights: Highlight[] = [
   {
     kind: 'miniCase',
     tag: 'Ored POS',
-    note: 'Not yet shipped, shown as a brief overview',
+    note: 'Adopted direction',
     title: 'From legacy screens to a clearer POS experience.',
     description:
       'Ored is a live, in-use POS. I evaluated the existing product, identified where its hierarchy and interactions broke down in everyday tasks, and redesigned the core workflows to resolve them.',
@@ -182,6 +182,7 @@ const highlights: Highlight[] = [
 ]
 
 export default function Highlights() {
+  const location = useLocation()
   const { ref: headerRef, revealed: headerRevealed } = useReveal<HTMLDivElement>()
   const { ref: gridRef, revealed: gridRevealed } = useReveal<HTMLDivElement>()
   const cardMotion = (i: number) => ({
@@ -209,7 +210,7 @@ export default function Highlights() {
           <div className={styles.galleryHeader}>
             <div>
               {item.tag && <span className={styles.tag}>{item.tag}</span>}
-              {item.kind === 'featuredCase' && item.note && <span className={styles.note}> · {item.note}</span>}
+              {item.kind === 'featuredCase' && item.note && <span className={styles.status}>{item.note}</span>}
               <h3 className={styles.title} style={{ marginTop: item.tag ? 8 : 0 }}>
                 {item.title}
               </h3>
@@ -260,13 +261,14 @@ export default function Highlights() {
         return (
           <Link
             to={item.href}
+            state={{ background: location }}
             className={`${styles.card} ${tierClassName} ${motion.className}`}
             style={motion.style}
             key={item.title}
           >
             {body}
             <span className={styles.miniCaseLink}>
-              View case snapshot <span aria-hidden="true">→</span>
+              View case study <span aria-hidden="true">→</span>
             </span>
           </Link>
         )
@@ -291,7 +293,7 @@ export default function Highlights() {
         <>
           <div className={styles.compareBody}>
             <span className={styles.tag}>{item.tag}</span>
-            {item.kind === 'miniCase' && item.note && <span className={styles.note}> · {item.note}</span>}
+            {item.kind === 'miniCase' && item.note && <span className={styles.status}>{item.note}</span>}
             <h3 className={styles.title}>{item.title}</h3>
             <p className={styles.compareDesc}>{item.description}</p>
             {item.kind === 'miniCase' && (
@@ -353,13 +355,14 @@ export default function Highlights() {
         return (
           <Link
             to={item.href}
+            state={{ background: location }}
             className={`${styles.card} ${tierClassName} ${motion.className}`}
             style={motion.style}
             key={item.title}
           >
             {compareBody}
             <span className={styles.miniCaseLink}>
-              View case snapshot <span aria-hidden="true">→</span>
+              View case study <span aria-hidden="true">→</span>
             </span>
           </Link>
         )

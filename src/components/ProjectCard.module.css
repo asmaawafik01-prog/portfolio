@@ -98,6 +98,19 @@
   backdrop-filter: blur(4px);
 }
 
+.status {
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  color: var(--text);
+  border: 1px solid var(--navy-bright);
+  border-radius: 100px;
+  padding: 3px 10px;
+}
+
 .body {
   padding: 14px 16px 16px;
   display: flex;
@@ -107,6 +120,7 @@
 
 .metaRow {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 6px;
   font-size: 13px;
@@ -135,9 +149,6 @@
   line-height: 1.5;
   color: var(--text-muted);
   margin-top: 5px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
 .arrow {

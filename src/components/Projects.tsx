@@ -6,6 +6,7 @@ const projects: Project[] = [
   {
     index: '01',
     slug: 'bcare',
+    status: 'End-to-end · Solo',
     name: 'Bcare',
     tag: 'Healthcare',
     type: 'Healthcare booking app',
@@ -19,6 +20,7 @@ const projects: Project[] = [
   {
     index: '02',
     slug: 'fooj',
+    status: 'Live',
     name: 'Fooj',
     tag: 'Marketplace',
     type: 'Two-sided marketplace app',
@@ -32,6 +34,7 @@ const projects: Project[] = [
   {
     index: '03',
     slug: 'self-order',
+    status: 'Tokens adopted',
     name: 'Self-Order Kiosk',
     tag: 'Self-Service',
     type: 'Touch-first kiosk ordering',
