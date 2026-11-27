@@ -6,12 +6,11 @@
   max-width: none;
   max-height: none;
   margin: 0;
-  padding: 56px max(16px, 6vw) 0;
+  padding: 24px 0 0;
   border: 0;
   color: var(--text);
   background: transparent;
-  overflow-y: auto;
-  overscroll-behavior: contain;
+  overflow: hidden;
 }
 
 .dialog::backdrop {
@@ -22,9 +21,12 @@
 }
 
 .panel {
-  max-width: 1040px;
-  min-height: 100%;
+  /* Leaves room on both sides for the close button. */
+  width: min(1040px, 100% - 152px);
+  height: 100%;
   margin: 0 auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   border-radius: 16px 16px 0 0;
   border: 1px solid var(--border-strong);
   border-bottom: 0;
@@ -37,23 +39,27 @@
 
 .close {
   position: fixed;
-  top: 68px;
-  right: max(calc(6vw + 12px), calc((100% - 1040px) / 2 + 16px));
+  top: 24px;
+  right: max(16px, calc((100% - 1040px) / 2 - 60px));
   z-index: 60;
   width: 44px;
   height: 44px;
   border-radius: 50%;
   border: 1px solid var(--border-strong);
-  background: rgba(74, 111, 165, 0.24);
-  backdrop-filter: blur(10px);
+  background: var(--navy-deep-2);
   color: var(--text);
   font-size: 16px;
+  font-weight: 700;
   cursor: pointer;
   animation: fadeIn 0.3s ease both;
 }
 
 .close:hover {
   border-color: var(--navy-bright);
+}
+
+.panel:focus {
+  outline: none;
 }
 
 .closing .panel {
@@ -92,17 +98,12 @@
 }
 
 @media (max-width: 640px) {
-  /* Phones: the close button gets its own strip and the panel scrolls under it,
-     so it never sits on top of the text. */
+  /* Phones: no room beside the frame, so the button gets its own strip above it. */
   .dialog {
-    padding: 64px 0 0;
-    overflow: hidden;
+    padding-top: 64px;
   }
   .panel {
-    height: 100%;
-    min-height: 0;
-    overflow-y: auto;
-    overscroll-behavior: contain;
+    width: 100%;
   }
   .close {
     top: 10px;

@@ -30,6 +30,7 @@ export default function CaseModal({ children }: { children: ReactNode }) {
     root.style.overflow = 'hidden'
     root.style.paddingRight = `${scrollbar}px`
     dialog.showModal()
+    panelRef.current?.focus({ preventScroll: true })
 
     return () => {
       window.clearTimeout(timer.current)
@@ -43,9 +44,8 @@ export default function CaseModal({ children }: { children: ReactNode }) {
 
   // Previous / next swaps the case study in place: start it from the top.
   useEffect(() => {
-    // The dialog scrolls on wide screens, the panel on phones.
-    ref.current?.scrollTo({ top: 0 })
     panelRef.current?.scrollTo({ top: 0 })
+    panelRef.current?.focus({ preventScroll: true })
   }, [pathname])
 
   return (
@@ -64,7 +64,7 @@ export default function CaseModal({ children }: { children: ReactNode }) {
       <button type="button" className={styles.close} onClick={close} aria-label="Close case study">
         ✕
       </button>
-      <div ref={panelRef} className={styles.panel}>
+      <div ref={panelRef} className={styles.panel} tabIndex={-1}>
         <CaseModalContext.Provider value={close}>{children}</CaseModalContext.Provider>
       </div>
     </dialog>
