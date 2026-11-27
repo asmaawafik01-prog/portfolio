@@ -1,9 +1,5 @@
-import CaseHeader from '../../components/case-study/CaseHeader'
-import CaseSection from '../../components/case-study/CaseSection'
-import DecisionBlock from '../../components/case-study/DecisionBlock'
+import CasePage, { ShotGrid } from '../../components/case-study/CasePage'
 import FlowSteps from '../../components/case-study/FlowSteps'
-import ScreenGallery, { type GalleryScreen } from '../../components/case-study/ScreenGallery'
-import CaseFooterNav from '../../components/case-study/CaseFooterNav'
 
 const IMG = (name: string) => `/images/bcare/${name}`
 
@@ -33,6 +29,7 @@ const RATIO = (name: string) => {
   const dims = DIMENSIONS[name]
   return dims ? dims[0] / dims[1] : 0.462
 }
+const shot = (name: string, alt: string) => ({ src: IMG(name), alt, ratio: RATIO(name) })
 
 // NOTE: the source filenames in /public/images/bcare do not reliably match their actual
 // on-screen content. Re-verified every file directly, one at a time (a prior batched
@@ -45,180 +42,169 @@ const RATIO = (name: string) => {
 //   14_book_for_other.png    → actually: book-for-self confirmation
 //   15_book_for_self.png     → actually: booking-confirmed success screen
 //   16_confirmation.png      → actually: live camera capture mid-scan
-// The map below assigns each file to its real content and real flow position — do not
-// reorder based on filename alone.
-const galleryScreens: GalleryScreen[] = [
-  { src: IMG('01_scan_prescription.png'), step: '01', caption: 'Start a scan: capture a prescription or upload one from the gallery.', ratio: RATIO('01_scan_prescription.png') },
-  { src: IMG('16_confirmation.png'), step: '02', caption: 'Live camera capture of the prescription.', ratio: RATIO('16_confirmation.png') },
-  { src: IMG('02_scan_prescription_labs.png'), step: '03', caption: 'Recommended labs, with required tests listed per lab.', ratio: RATIO('02_scan_prescription_labs.png') },
-  { src: IMG('03_scan_prescription_confirmed.png'), step: '04', caption: 'Tests confirmed, with a booking date and time selected.', ratio: RATIO('03_scan_prescription_confirmed.png') },
-  { src: IMG('04_home.png'), step: '05', caption: 'Home / discovery screen.', ratio: RATIO('04_home.png') },
-  { src: IMG('05_lab_details.png'), step: '06', caption: 'Full profile for a selected lab, including branches and services.', ratio: RATIO('05_lab_details.png') },
-  { src: IMG('06_branch_select.png'), step: '07', caption: 'Choose a specific branch.', ratio: RATIO('06_branch_select.png') },
-  { src: IMG('07_booking_service.png'), step: '08', caption: 'Booking screen: selected service and appointment date.', ratio: RATIO('07_booking_service.png') },
-  { src: IMG('08_tests_browse.png'), step: '09', caption: 'Browse available tests directly, with an offer and running total.', ratio: RATIO('08_tests_browse.png') },
-  { src: IMG('10_booking_date.png'), step: '10', caption: 'Add a family member to book on their behalf.', ratio: RATIO('10_booking_date.png') },
-  { src: IMG('09_family_profile.png'), step: '11', caption: 'Select a payment method: cash or wallet points.', ratio: RATIO('09_family_profile.png') },
-  { src: IMG('11_payment_method.png'), step: '12', caption: 'Fasting guidance surfaced up front, e.g. a 12-hour window.', ratio: RATIO('11_payment_method.png') },
-  { src: IMG('12_fasting_notice.png'), step: '13', caption: 'Booking on behalf of a registered family member.', ratio: RATIO('12_fasting_notice.png') },
-  { src: IMG('13_book_for_family.png'), step: '14', caption: 'Booking for someone not yet added to the account.', ratio: RATIO('13_book_for_family.png') },
-  { src: IMG('14_book_for_other.png'), step: '15', caption: 'Booking directly for yourself.', ratio: RATIO('14_book_for_other.png') },
-  { src: IMG('15_book_for_self.png'), step: '16', caption: 'Booking confirmed.', ratio: RATIO('15_book_for_self.png') },
-  { src: IMG('18_order_timeline.png'), step: '17', caption: 'Order status tracked through a timeline: confirmed, sample collected, analysis, results ready.', ratio: RATIO('18_order_timeline.png') },
-  { src: IMG('17_order_results.png'), step: '18', caption: 'Results accessed directly in the app once ready.', ratio: RATIO('17_order_results.png') },
-]
+// The alt text below describes each file's real content — do not reorder based on filename.
 
 export default function Bcare() {
   return (
-    <>
-      <CaseHeader
-        eyebrow="Case Study 01"
-        title="Bcare"
-        subtitle="Healthcare booking app, 2026"
-        role="I designed the complete Bcare experience end-to-end, solo, from prescription scanning through booking, family management, and order tracking."
-        meta={['Mobile app', 'Designed in Figma']}
-        heroImage={IMG('01_scan_prescription.png')}
-        heroAlt="Bcare prescription scanning screen"
-        heroRatio={RATIO('01_scan_prescription.png')}
-      />
-
-      <CaseSection eyebrow="Context" heading="What Bcare is">
-        <p>
-          Bcare is a healthcare booking app designed to make accessing medical services,
-          particularly laboratory testing, more convenient. Instead of relying on traditional
-          methods, calling labs or visiting them in person, users could search for tests, find
-          nearby labs, and complete bookings directly through the app.
-        </p>
-      </CaseSection>
-
-      <CaseSection eyebrow="The Challenge" heading="Starting from a paper prescription" alt>
-        <p>
-          Healthcare booking often assumes users already understand exactly what they need:
-          which test, which lab, which service. In reality, many users start from something more
-          confusing: a paper prescription written by a doctor. The core design challenge was
-          turning that starting point into a clear, guided path to a booking, without requiring
-          the user to understand medical terminology themselves.
-        </p>
-      </CaseSection>
-
-      <CaseSection eyebrow="My Contribution" heading="Designed end-to-end">
-        <p>I designed the complete Bcare experience end-to-end, including:</p>
-        <ul style={{ marginTop: 18, paddingLeft: 20, lineHeight: 1.9, color: 'var(--text-muted)' }}>
-          <li>Prescription scanning and test detection</li>
-          <li>Lab discovery and comparison</li>
-          <li>Booking flow (for self or for family members)</li>
-          <li>Family member management</li>
-          <li>Order tracking and results delivery</li>
-        </ul>
-        <p style={{ marginTop: 18 }}>
-          I also built a lightweight set of reusable UI components as part of designing the app
-          entirely from scratch, to keep the experience visually consistent, without a formal
-          design system in place.
-        </p>
-      </CaseSection>
-
-      <section className="section" style={{ borderBottom: '1px solid var(--border)' }}>
-        <div className="container">
-          <span className="eyebrow">Key Decisions</span>
-          <div style={{ marginTop: 10 }}>
-            <DecisionBlock
-              index="01"
-              title="Prescription scanning with smart lab matching."
-              text="After a user scans their prescription, the app identifies the required tests and surfaces nearby labs. Since not every lab carries every test, I designed a coverage-matching system that shows users exactly how many of their required tests each lab offers (e.g., “4 of 4” or “2 of 4”). Labs with full coverage are prioritized; when no single lab covers everything, the app recommends a fallback lab for the remaining tests. This let users make a fast, informed choice without manually cross-checking each lab themselves."
-              images={[
-                { src: IMG('01_scan_prescription.png'), alt: 'Scan prescription', ratio: RATIO('01_scan_prescription.png') },
-                { src: IMG('16_confirmation.png'), alt: 'Live prescription capture', ratio: RATIO('16_confirmation.png') },
-                { src: IMG('02_scan_prescription_labs.png'), alt: 'Coverage-matched labs', ratio: RATIO('02_scan_prescription_labs.png') },
-              ]}
-            />
-            <DecisionBlock
-              index="02"
-              title="Booking flexibility, with three distinct paths."
-              text="At checkout, users could book for themselves, for a registered family member, or for someone else entirely (entered manually or pulled from contacts). Each path adjusts what information is collected. This was designed around real scenarios, like a parent booking a test for a child, or someone booking on behalf of a relative who isn't formally added to their account yet."
-              images={[
-                { src: IMG('14_book_for_other.png'), alt: 'Book for self', ratio: RATIO('14_book_for_other.png') },
-                { src: IMG('12_fasting_notice.png'), alt: 'Book for family', ratio: RATIO('12_fasting_notice.png') },
-                { src: IMG('13_book_for_family.png'), alt: 'Book for other', ratio: RATIO('13_book_for_family.png') },
-              ]}
-            />
-            <DecisionBlock
-              index="03"
-              title="Proactive medical prep guidance."
-              text="Some tests require fasting or other preparation before the appointment. Rather than let users discover this after arriving at the lab, the booking flow surfaces a clear notice up front (e.g., a 12-hour fasting requirement) so they can plan accordingly."
-              images={[
-                { src: IMG('11_payment_method.png'), alt: 'Fasting notice', ratio: RATIO('11_payment_method.png') },
-              ]}
-            />
-            <DecisionBlock
-              index="04"
-              title="End-to-end journey, not just booking."
-              text="The experience continued past checkout: users could track their order status and, once results were ready, access them directly in the app, removing the need to follow up with the lab directly."
-              images={[
-                { src: IMG('18_order_timeline.png'), alt: 'Order status timeline', ratio: RATIO('18_order_timeline.png') },
-                { src: IMG('17_order_results.png'), alt: 'Test results ready to access', ratio: RATIO('17_order_results.png') },
-              ]}
-            />
-          </div>
-        </div>
-      </section>
-
-      <CaseSection eyebrow="Solution" heading="Two entry points, one guided path" alt>
-        <FlowSteps
-          label="Full flow"
-          steps={[
-            'Discover a lab',
-            'View lab profile',
-            'Select tests',
-            'Book',
-            'Track order status',
-            'Access results',
+    <CasePage
+      title="Bcare: From a Paper Prescription to a Booked Lab Test"
+      summary="I designed the complete Bcare experience end-to-end, solo, from prescription scanning through booking, family management, and order tracking."
+      meta={[
+        { label: 'Role', value: 'Product Designer' },
+        { label: 'Type', value: 'Healthcare / Mobile App' },
+        { label: 'Team', value: 'Solo project' },
+        { label: 'Year', value: '2026' },
+      ]}
+      hero={
+        <ShotGrid
+          priority
+          shots={[
+            shot('01_scan_prescription.png', 'Bcare prescription scanning screen'),
+            shot('02_scan_prescription_labs.png', 'Labs matched to the prescription'),
+            shot('18_order_timeline.png', 'Order status timeline'),
           ]}
         />
-        <FlowSteps
-          label="Parallel flow"
-          steps={[
-            'Scan prescription',
-            'Auto-detected tests',
-            'Matched labs with coverage indicators',
-            'Book',
-          ]}
-        />
-      </CaseSection>
-
-      <section className="section">
-        <div className="container">
-          <span className="eyebrow">Full Screen Flow</span>
-          <h2
-            style={{
-              fontSize: 'clamp(24px,3.2vw,30px)',
-              fontWeight: 800,
-              letterSpacing: '-0.015em',
-              marginTop: 10,
-              marginBottom: 8,
-            }}
-          >
-            All confirmed screens, 01 → 18
-          </h2>
-          <p style={{ color: 'var(--text-muted)', fontSize: 15, maxWidth: 620, marginBottom: 8 }}>
-            Prescription scan/capture, coverage-matched lab results, lab details, booking with
-            date/service selection, fasting notice, payment method selection, the three-way
-            &ldquo;book for&rdquo; flow, booking confirmation, and order status through to results.
-          </p>
-          <ScreenGallery screens={galleryScreens} />
-        </div>
-      </section>
-
-      <CaseSection eyebrow="Impact" heading="What this design delivers." alt>
-        <p>
-          A complete, 18-screen booking flow designed from a single ambiguous input, a paper
-          prescription, with zero existing reference to build from. This includes a lab
-          coverage-matching system, three distinct booking paths, and a reusable UI component
-          set built from scratch to keep the experience consistent without a formal design
-          system in place.
-        </p>
-      </CaseSection>
-
-      <CaseFooterNav nextSlug="fooj" nextName="Fooj" />
-    </>
+      }
+      context={{
+        text: 'Bcare is a healthcare booking app designed to make accessing medical services, particularly laboratory testing, more convenient. Instead of calling labs or visiting them in person, users can search for tests, find nearby labs, and complete bookings directly through the app.',
+        points: [
+          <>Ran <strong>competitor analysis</strong> and built <strong>user personas</strong>.</>,
+          <>Designed <strong>prescription scanning</strong> and test detection, plus <strong>lab discovery and comparison</strong>.</>,
+          <>Designed the <strong>booking flow</strong> for yourself or family members, including family member management.</>,
+          <>Designed <strong>order tracking</strong> and results delivery.</>,
+          <>Built a lightweight set of <strong>reusable UI components</strong> from scratch, to keep the app consistent without a formal design system.</>,
+        ],
+      }}
+      problems={{
+        points: [
+          { lead: 'Assumed knowledge', text: 'Healthcare booking often assumes users already know which test, which lab, and which service they need.' },
+          { lead: 'A confusing starting point', text: 'Many users start from a paper prescription written by a doctor.' },
+          { lead: 'Medical terminology', text: 'The path to a booking shouldn’t require users to understand medical terms themselves.' },
+          { lead: 'Offline effort', text: 'The traditional way means calling labs or visiting them in person.' },
+        ],
+      }}
+      insights={[
+        {
+          title: 'Not every lab carries every test.',
+          intro: 'Users need to know which lab can cover their prescription before they book.',
+          decisions: [
+            { lead: 'Coverage matching', text: 'After scanning, the app identifies the required tests and shows how many each nearby lab offers (e.g. “4 of 4” or “2 of 4”), so users can choose without checking each lab by hand.' },
+            { lead: 'Full coverage first', text: 'Labs with full coverage are prioritized. When no single lab covers everything, the app recommends a fallback lab for the remaining tests.' },
+          ],
+        },
+        {
+          title: 'Booking isn’t always for yourself.',
+          intro: 'A parent books a test for a child, or someone books for a relative who isn’t on their account yet.',
+          decisions: [
+            { lead: 'Three booking paths', text: 'Users book for themselves, for a registered family member, or for someone else entirely (entered manually or pulled from contacts).' },
+            { lead: 'The right information per path', text: 'Each path adjusts what information is collected.' },
+          ],
+        },
+        {
+          title: 'Test preparation shouldn’t be discovered at the lab.',
+          intro: 'Some tests require fasting or other preparation before the appointment.',
+          decisions: [
+            { lead: 'Up-front notice', text: 'The booking flow surfaces a clear notice early (e.g. a 12-hour fasting requirement) so users can plan accordingly.' },
+          ],
+        },
+      ]}
+      validation={{
+        title: 'Research & Usability Testing',
+        intro: 'I analyzed competitor apps, defined personas for the people who would use Bcare, and ran usability testing. This is how the design answers each problem it set out to solve.',
+        points: [
+          { lead: 'Starting from a prescription', text: 'Scanning identifies the required tests, so users don’t need to understand the terminology.' },
+          { lead: 'Choosing a lab', text: 'Coverage indicators show how many of the required tests each lab offers.' },
+          { lead: 'Booking for others', text: 'Three paths cover yourself, a family member, or someone else.' },
+          { lead: 'Preparation', text: 'The fasting notice appears before the appointment, not at the lab.' },        ],
+      }}
+      design={{
+        title: 'Delivering an end-to-end lab booking app for Bcare',
+        intro: (
+          <>
+            <FlowSteps
+              label="Full flow"
+              steps={['Discover a lab', 'View lab profile', 'Select tests', 'Book', 'Track order status', 'Access results']}
+            />
+            <FlowSteps
+              label="Parallel flow"
+              steps={['Scan prescription', 'Auto-detected tests', 'Matched labs with coverage indicators', 'Book']}
+            />
+          </>
+        ),
+        modules: [
+          {
+            title: 'Prescription Scan & Lab Matching',
+            text: 'Capture or upload a prescription, compare labs by the tests they cover, then confirm the tests with a date and time.',
+            media: (
+              <ShotGrid
+                columns={4}
+                shots={[
+                  shot('01_scan_prescription.png', 'Start a scan or upload from the gallery'),
+                  shot('16_confirmation.png', 'Live camera capture of the prescription'),
+                  shot('02_scan_prescription_labs.png', 'Recommended labs with required tests per lab'),
+                  shot('03_scan_prescription_confirmed.png', 'Tests confirmed with a date and time'),
+                ]}
+              />
+            ),
+          },
+          {
+            title: 'Lab Discovery',
+            text: 'Browse labs and tests directly, open a lab’s full profile, and choose a branch.',
+            media: (
+              <ShotGrid
+                columns={4}
+                shots={[
+                  shot('04_home.png', 'Home and discovery'),
+                  shot('05_lab_details.png', 'Lab profile with branches and services'),
+                  shot('06_branch_select.png', 'Branch selection'),
+                  shot('08_tests_browse.png', 'Browse tests with an offer and running total'),
+                ]}
+              />
+            ),
+          },
+          {
+            title: 'Booking & Family',
+            text: 'Choose the service and date, see fasting guidance, pick a payment method, and book for yourself, a family member, or someone else.',
+            media: (
+              <ShotGrid
+                columns={4}
+                shots={[
+                  shot('07_booking_service.png', 'Selected service and appointment date'),
+                  shot('11_payment_method.png', 'Fasting guidance'),
+                  shot('10_booking_date.png', 'Add a family member'),
+                  shot('09_family_profile.png', 'Payment method: cash or wallet points'),
+                  shot('14_book_for_other.png', 'Booking for yourself'),
+                  shot('12_fasting_notice.png', 'Booking for a family member'),
+                  shot('13_book_for_family.png', 'Booking for someone not on the account'),
+                  shot('15_book_for_self.png', 'Booking confirmed'),
+                ]}
+              />
+            ),
+          },
+          {
+            title: 'Order Tracking & Results',
+            text: 'The journey continues past checkout: users track their order status and access results directly in the app, without following up with the lab.',
+            media: (
+              <ShotGrid
+                shots={[
+                  shot('18_order_timeline.png', 'Order status timeline'),
+                  shot('17_order_results.png', 'Results ready in the app'),
+                ]}
+              />
+            ),
+          },
+        ],
+      }}
+      impact={{
+        points: [
+          { lead: 'A complete booking flow', text: '18 screens designed from a single ambiguous input, a paper prescription, with no existing reference to build from.' },
+          { lead: 'Lab coverage matching', text: 'Users can compare labs by how many of their required tests each one offers.' },
+          { lead: 'Three booking paths', text: 'One flow serves bookings for yourself, a family member, or someone else.' },
+          { lead: 'Consistent UI', text: 'A reusable component set built from scratch keeps the experience consistent without a formal design system.' },
+        ],
+      }}
+      prev={{ to: '/work/erp', name: 'Microtec ERP' }}
+      next={{ to: '/work/fooj', name: 'Fooj' }}
+    />
   )
 }

@@ -1,16 +1,11 @@
-import CaseHeader from '../../components/case-study/CaseHeader'
-import CaseSection from '../../components/case-study/CaseSection'
+import CasePage, { ShotGrid } from '../../components/case-study/CasePage'
 import BeforeAfter from '../../components/case-study/BeforeAfter'
 import BrowserFrame from '../../components/case-study/BrowserFrame'
 import AnnotatedFrame from '../../components/case-study/AnnotatedFrame'
-import ScreenGallery from '../../components/case-study/ScreenGallery'
-import OwnershipGrid from '../../components/case-study/OwnershipGrid'
-import TagList from '../../components/case-study/TagList'
-import CaseFooterNav from '../../components/case-study/CaseFooterNav'
 
 const IMG = (name: string) => `/images/pos/${name}`
 
-// Verified directly against every screenshot before writing captions. Several before_XX
+// Verified directly against every screenshot before writing alt text. Several before_XX
 // filenames do not match their actual content (they are shifted relative to what the name
 // says) — see the alt text on each usage below for what each image actually shows.
 const RATIO_AFTER = 3840 / 2160
@@ -18,158 +13,131 @@ const RATIO_BEFORE = 2560 / 1600
 
 export default function Pos() {
   return (
-    <>
-      <CaseHeader
-        eyebrow="Product Highlight"
-        title="Ored POS"
-        subtitle="From legacy screens to a clearer POS experience."
-        role="I own this redesign end-to-end: evaluating the existing product firsthand, identifying what wasn't working, and redesigning the core POS workflows myself."
-        meta={['Web/Tablet', 'POS Redesign', 'Case Snapshot']}
-        heroImage={IMG('05_table_screen_after.png')}
-        heroAlt="Ored POS redesigned table screen, color-coded by occupancy"
-        heroRatio={RATIO_AFTER}
-        Frame={BrowserFrame}
-        wide
-      />
-
-      <CaseSection eyebrow="01: The Problem" heading="An existing POS, evaluated firsthand">
-        <p>
-          Ored is a live, in-use POS, not a blank slate. Before redesigning anything, I tested
-          the existing product firsthand to see where it broke down in real, everyday tasks.
-        </p>
-        <div style={{ marginTop: 28, maxWidth: 640 }}>
-          <AnnotatedFrame
-            src={IMG('before_02_table_screen.png')}
-            alt="Old Ored POS order list, a dense, unstructured data table"
-            ratio={RATIO_BEFORE}
-            points={[
-              { x: 50, y: 16, label: 'Search, filters, and pagination compressed into one dense toolbar.' },
-              { x: 50, y: 30, label: 'Eight columns given equal visual weight, no hierarchy for what matters most.' },
-              { x: 28, y: 37, label: 'Order status shown only as small colored text, easy to miss while scanning.' },
-            ]}
-          />
-        </div>
-        <TagList
-          tone="neutral"
-          items={[
-            'Dense information hierarchy',
-            'Legacy visual language',
-            'Hard-to-scan layouts',
-            'Inefficient interactions',
-            'Inconsistent actions',
-          ]}
+    <CasePage
+      title="Ored POS: From Legacy Screens to a Clearer Retail Experience"
+      summary="I own this redesign end-to-end: evaluating the existing product firsthand, identifying what wasn’t working, and redesigning the core POS workflows myself."
+      meta={[
+        { label: 'Role', value: 'Product Designer' },
+        { label: 'Type', value: 'POS / Web & Tablet' },
+        { label: 'Focus', value: 'POS Redesign' },
+      ]}
+      hero={
+        <ShotGrid
+          priority
+          columns={1}
+          Frame={BrowserFrame}
+          shots={[{ src: IMG('05_table_screen_after.png'), alt: 'Redesigned table screen, color-coded by occupancy', ratio: RATIO_AFTER }]}
         />
-      </CaseSection>
-
-      <CaseSection
-        eyebrow="02: The Redesign"
-        heading="A familiar POS, redesigned for a faster, clearer experience."
-        alt
-        wide
-      >
-        <p style={{ maxWidth: 640 }}>
-          Same product, same core flows, restructured so the interface gets out of the way of
-          the work.
-        </p>
-        <div style={{ marginTop: 28 }}>
-          <ScreenGallery
-            wide
-            Frame={BrowserFrame}
-            screens={[
-              {
-                src: IMG('05_table_screen_after.png'),
-                step: 'Table Screen',
-                caption: 'Color-coded floor layout instead of a flat button list.',
-                ratio: RATIO_AFTER,
-              },
-              {
-                src: IMG('03_order_list_after.png'),
-                step: 'Order Detail',
-                caption: 'Items, status, and payment grouped into one clear breakdown.',
-                ratio: RATIO_AFTER,
-              },
-            ]}
-          />
-        </div>
-        <div style={{ marginTop: 36 }}>
-          <OwnershipGrid
-            items={[
-              { index: '01', verb: 'Clearer hierarchy', text: 'Primary information is easy to find at a glance.' },
-              { index: '02', verb: 'Better grouping', text: 'Related information is grouped instead of scattered across a flat list.' },
-              { index: '03', verb: 'Efficient interactions', text: 'Fewer steps and less hunting to complete common tasks.' },
-              { index: '04', verb: 'Visible key actions', text: 'Primary actions stand out instead of blending into the layout.' },
-              { index: '05', verb: 'Updated visual language', text: 'A modern interface replacing the dated, boxed-in look.' },
-              { index: '06', verb: 'Consistency', text: 'The same patterns repeat across screens instead of each one behaving differently.' },
-            ]}
-          />
-        </div>
-      </CaseSection>
-
-      <section className="section">
-        <div className="container">
-          <span className="eyebrow">03: Before → After</span>
-          <h2
-            style={{
-              fontSize: 'clamp(24px,3.2vw,30px)',
-              fontWeight: 800,
-              letterSpacing: '-0.015em',
-              marginTop: 10,
-              marginBottom: 4,
-            }}
-          >
-            The clearest evidence of the redesign
-          </h2>
-          <p style={{ color: 'var(--text-muted)', fontSize: 15, maxWidth: 640, marginBottom: 8 }}>
-            The old and new versions of the same screens, side by side.
-          </p>
-
-          <BeforeAfter
-            index="01"
-            title="Table Screen: Layout"
-            text="Before: a flat list of table buttons with no read on occupancy. After: a color-coded floor layout, occupancy, section, and reservation status are all visible at a glance."
-            before={{ src: IMG('before_01_employee_meals.png'), alt: 'Old table screen, a flat list of table buttons', ratio: RATIO_BEFORE }}
-            after={{ src: IMG('05_table_screen_after.png'), alt: 'Redesigned table screen with color-coded occupancy grid', ratio: RATIO_AFTER }}
-          />
-
-          <BeforeAfter
-            index="02"
-            title="Order List: Hierarchy"
-            text="Before: every order was a raw, undifferentiated data row. After: a scannable breakdown, items, status, and payment method grouped together instead of competing for attention."
-            before={{ src: IMG('before_02_table_screen.png'), alt: 'Old order list, a raw multi-column data table', ratio: RATIO_BEFORE }}
-            after={{ src: IMG('03_order_list_after.png'), alt: 'Redesigned order detail with a clear item breakdown', ratio: RATIO_AFTER }}
-          />
-
-          <BeforeAfter
-            index="03"
-            title="Item Details: Actions"
-            text="Before: discounts lived in a disconnected coupon modal, separate from the item. After: coupon codes, loyalty points, and wallet value fold into one panel directly on the item. The primary action is obvious instead of buried in a popup."
-            before={{ src: IMG('before_03_order_list.png'), alt: 'Old discount coupon modal', ratio: RATIO_BEFORE }}
-            after={{ src: IMG('01_item_details_discount_after.png'), alt: 'Redesigned item details with an offers and loyalty panel', ratio: RATIO_AFTER }}
-          />
-        </div>
-      </section>
-
-      <CaseSection eyebrow="04: The Impact" heading="A clearer, more efficient POS workflow" alt>
-        <p>
-          Redesigned an eight-column, no-hierarchy data table into a color-coded, grouped
-          breakdown, adopted as the team&rsquo;s active direction for the POS redesign. It hasn&rsquo;t
-          shipped yet, so there&rsquo;s no usage data to report, but every change traces directly
-          back to a problem identified during hands-on evaluation of the live product.
-        </p>
-        <TagList
-          tone="accent"
-          items={[
-            'Clearer retail workflow',
-            'Easier scanning of information',
-            'More focused interface',
-            'More consistent UI',
-            'More modern POS experience',
-            'Simplified interactions',
-          ]}
-        />
-      </CaseSection>
-
-      <CaseFooterNav nextSlug="self-order" nextName="Self-Order Kiosk" nextLabel="Explore a full case study" />
-    </>
+      }
+      context={{
+        text: 'Ored is a live, in-use POS, not a blank slate. Same product, same core flows, restructured so the interface gets out of the way of the work.',
+        points: [
+          <><strong>Evaluated the existing product</strong> firsthand, in real, everyday tasks.</>,
+          <><strong>Sat with employees</strong> using the current system, looking at cashier speed and errors.</>,
+          <>Redesigned the core workflows: <strong>table screen, order detail, and item details</strong>.</>,
+          <>Updated the <strong>visual language</strong> and made patterns consistent across screens.</>,
+          <>Owned the redesign <strong>end-to-end</strong>.</>,
+        ],
+      }}
+      problems={{
+        points: [
+          { lead: 'Too complex to use', text: 'Employees complained that the system was complicated.' },
+          { lead: 'Long training', text: 'Training new employees on it took a long time.' },
+          { lead: 'Load on the cashier', text: 'The complexity added to an already heavy workload, with speed and errors at stake.' },
+          { lead: 'Dense information hierarchy', text: 'Eight columns were given equal visual weight, with nothing showing what matters most.' },
+          { lead: 'Crowded toolbar', text: 'Search, filters, and pagination were compressed into one dense toolbar.' },
+          { lead: 'Easy-to-miss status', text: 'Order status appeared only as small colored text.' },
+          { lead: 'Legacy interactions', text: 'Hard-to-scan layouts, inefficient interactions, and inconsistent actions.' },
+        ],
+        extra: (
+          <div style={{ marginTop: 28, maxWidth: 720 }}>
+            <AnnotatedFrame
+              src={IMG('before_02_table_screen.png')}
+              alt="Old Ored POS order list, a dense, unstructured data table"
+              ratio={RATIO_BEFORE}
+              points={[
+                { x: 50, y: 16, label: 'Search, filters, and pagination compressed into one dense toolbar.' },
+                { x: 50, y: 30, label: 'Eight columns given equal visual weight, no hierarchy for what matters most.' },
+                { x: 28, y: 37, label: 'Order status shown only as small colored text, easy to miss while scanning.' },
+              ]}
+            />
+          </div>
+        ),
+      }}
+      insights={[
+        {
+          title: 'Table status wasn’t visible.',
+          intro: 'The old table screen was a flat list of table buttons with no read on occupancy.',
+          decisions: [{ lead: 'Color-coded floor layout', text: 'Occupancy, section, and reservation status are all visible at a glance.' }],
+        },
+        {
+          title: 'Every order looked like a raw data row.',
+          intro: 'Information competed for attention instead of being organized.',
+          decisions: [{ lead: 'Grouped breakdown', text: 'Items, status, and payment method are grouped into one scannable view.' }],
+        },
+        {
+          title: 'Discounts lived away from the item.',
+          intro: 'Applying a discount meant a disconnected coupon modal.',
+          decisions: [
+            { lead: 'One panel on the item', text: 'Coupon codes, loyalty points, and wallet value fold into a single panel directly on the item.' },
+            { lead: 'Obvious primary action', text: 'The main action stands out instead of being buried in a popup.' },
+          ],
+        },
+      ]}
+      validation={{
+        title: 'Grounded in the Live Product, Adopted by the Team',
+        intro: 'The redesign isn’t shipped yet, so validation so far comes from research on the current product and from the team.',
+        points: [
+          { lead: 'Evaluation', text: 'I sat with employees and evaluated the existing product in real, everyday tasks, looking at cashier speed, errors, and training time.' },
+          { lead: 'Traceability', text: 'Every change traces back to a problem found in that evaluation.' },
+          { lead: 'Heuristic review', text: 'A later review of the old screens against usability heuristics flagged status shown as small colored text, a coupon modal that hides the order behind two look-alike buttons, and very small quantity controls.' },
+          { lead: 'Result', text: 'The redesign is the team’s active direction for the POS.' },
+          { lead: 'Next step', text: 'Test the redesigned flows with cashiers and compare them with the current product.' },
+        ],
+      }}
+      design={{
+        title: 'Delivering a faster, clearer POS experience',
+        modules: [
+          {
+            title: 'Table Screen',
+            text: 'A flat list of table buttons became a color-coded floor layout.',
+            media: (
+              <BeforeAfter
+                before={{ src: IMG('before_01_employee_meals.png'), alt: 'Old table screen, a flat list of table buttons', ratio: RATIO_BEFORE }}
+                after={{ src: IMG('05_table_screen_after.png'), alt: 'Redesigned table screen with color-coded occupancy grid', ratio: RATIO_AFTER }}
+              />
+            ),
+          },
+          {
+            title: 'Order Detail',
+            text: 'Raw, undifferentiated data rows became a scannable breakdown.',
+            media: (
+              <BeforeAfter
+                before={{ src: IMG('before_02_table_screen.png'), alt: 'Old order list, a raw multi-column data table', ratio: RATIO_BEFORE }}
+                after={{ src: IMG('03_order_list_after.png'), alt: 'Redesigned order detail with a clear item breakdown', ratio: RATIO_AFTER }}
+              />
+            ),
+          },
+          {
+            title: 'Item Details & Offers',
+            text: 'The coupon modal became an offers and loyalty panel on the item itself.',
+            media: (
+              <BeforeAfter
+                before={{ src: IMG('before_03_order_list.png'), alt: 'Old discount coupon modal', ratio: RATIO_BEFORE }}
+                after={{ src: IMG('01_item_details_discount_after.png'), alt: 'Redesigned item details with an offers and loyalty panel', ratio: RATIO_AFTER }}
+              />
+            ),
+          },
+        ],
+      }}
+      impact={{
+        points: [
+          { lead: 'Clearer hierarchy', text: 'An eight-column, no-hierarchy table became a color-coded, grouped breakdown, so primary information is easy to find.' },
+          { lead: 'Efficient interactions', text: 'Fewer steps and less hunting, with key actions standing out.' },
+          { lead: 'Consistency', text: 'The same patterns repeat across screens, in a modern visual language.' },        ],
+      }}
+      prev={{ to: '/work/self-order', name: 'Self-Order Kiosk' }}
+      next={{ to: '/work/erp', name: 'Microtec ERP' }}
+    />
   )
 }

@@ -36,7 +36,7 @@ export default function Hero() {
             Designing clarity into complex products, from enterprise systems to mobile apps.
           </p>
           <p className={`${styles.supporting} reveal${entrance}`} style={beat(3)}>
-            I&rsquo;m a UI/UX Designer who works within product teams to solve real usability
+            I&rsquo;m a Product Designer who works within product teams to solve real usability
             problems across enterprise, retail, and consumer platforms, from multi-module ERP
             workflows to end-to-end mobile app design.
           </p>

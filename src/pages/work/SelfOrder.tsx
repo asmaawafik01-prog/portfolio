@@ -1,276 +1,140 @@
-import CaseHeader from '../../components/case-study/CaseHeader'
-import CaseSection from '../../components/case-study/CaseSection'
+import CasePage, { ShotGrid } from '../../components/case-study/CasePage'
 import KioskFrame from '../../components/case-study/KioskFrame'
 import FlowSteps from '../../components/case-study/FlowSteps'
-import OwnershipGrid from '../../components/case-study/OwnershipGrid'
-import DecisionTriple from '../../components/case-study/DecisionTriple'
 import TokenFlow from '../../components/case-study/TokenFlow'
-import ScreenGallery, { type GalleryScreen } from '../../components/case-study/ScreenGallery'
-import CaseFooterNav from '../../components/case-study/CaseFooterNav'
-import styles from './SelfOrder.module.css'
 
 const IMG = (name: string) => `/images/highlights/kiosk/${name}`
 const RATIO = 1080 / 1920
-
-const flowScreens: GalleryScreen[] = [
-  { src: IMG('01-welcome.png'), step: '01', caption: 'Welcome: choose dine-in or takeaway.', ratio: RATIO },
-  { src: IMG('02-menu.png'), step: '02', caption: 'Browse menu: categories and quick filters.', ratio: RATIO },
-  { src: IMG('03-item-detail.png'), step: '03', caption: 'Customize: a side panel keeps the menu in view.', ratio: RATIO },
-  { src: IMG('04-order-review.png'), step: '04', caption: 'Review order: same panel pattern, full context kept.', ratio: RATIO },
-  { src: IMG('05-payment.png'), step: '05', caption: 'Pay: one clear method selection.', ratio: RATIO },
-]
-
-const finalScreens: GalleryScreen[] = [
-  { src: IMG('02-menu.png'), step: 'Menu', caption: 'The main ordering surface: category rail, filter chips, and an evenly spaced item grid.', ratio: RATIO },
-  { src: IMG('03-item-detail.png'), step: 'Item detail', caption: 'Ingredients, add-ons, and quantity, all editable without leaving the menu behind.', ratio: RATIO },
-  { src: IMG('04-order-review.png'), step: 'Order review', caption: 'The full order, reviewable in the same panel pattern used throughout.', ratio: RATIO },
-  { src: IMG('05-payment.png'), step: 'Payment', caption: 'Four payment methods, each a full-width, unambiguous tap target.', ratio: RATIO },
-]
+const shot = (name: string, alt: string) => ({ src: IMG(name), alt, ratio: RATIO })
 
 export default function SelfOrder() {
   return (
-    <>
-      <CaseHeader
-        eyebrow="Case Study 03: Self-Order Kiosk"
-        title="Designing for touch, with no playbook to follow."
-        subtitle="I designed the Self-Order Kiosk experience while researching touch-target sizing and helping build the design-system foundation behind it."
-        role="I owned the Self-Order UX/UI design and the touch-target research behind it. When I spotted a gap in the design system, I raised it with the team and helped build the new value-token foundation that resulted."
-        meta={['Focus: UX/UI · Research · Design System', 'Product: Self-Order Kiosk']}
-        heroImage={IMG('02-menu.png')}
-        heroAlt="Self-Order Kiosk menu screen, a touch-first grid of dishes with category tabs"
-        heroRatio={RATIO}
-        Frame={KioskFrame}
-      />
-
-      <CaseSection eyebrow="The Challenge" heading="No playbook. So we had to build one.">
-        <p>
-          The Self-Order experience had few existing references for kiosk sizing, touch targets,
-          or scalable UI foundations. Key decisions couldn&rsquo;t just be copied from an existing
-          system. They had to be figured out.
-        </p>
-      </CaseSection>
-
-      <section className="section" style={{ background: 'var(--bg-alt)', borderBottom: '1px solid var(--border)', borderTop: '1px solid var(--border)' }}>
-        <div className="container">
-          <span className="eyebrow">What I Owned</span>
-          <h2
-            style={{
-              fontSize: 'clamp(24px,3.2vw,30px)',
-              fontWeight: 800,
-              letterSpacing: '-0.015em',
-              marginTop: 10,
-              marginBottom: 4,
-            }}
-          >
-            One project, four connected responsibilities.
-          </h2>
-          <OwnershipGrid
-            items={[
-              { index: '01', verb: 'Designed', text: 'Self-Order UX/UI and interaction flows.' },
-              { index: '02', verb: 'Researched', text: 'Sizing and touch-target requirements for the kiosk experience.' },
-              { index: '03', verb: 'Built', text: 'A new value-token foundation to support consistent UI decisions.' },
-              { index: '04', verb: 'Aligned', text: 'Worked with the team to validate the direction and move the system forward.' },
-            ]}
-          />
-        </div>
-      </section>
-
-      <section className="section" style={{ borderBottom: '1px solid var(--border)' }}>
-        <div className="container">
-          <span className="eyebrow">The Research</span>
-          <h2
-            style={{
-              fontSize: 'clamp(24px,3.2vw,30px)',
-              fontWeight: 800,
-              letterSpacing: '-0.015em',
-              marginTop: 10,
-              marginBottom: 4,
-              maxWidth: 620,
-            }}
-          >
-            Before designing the buttons, I had to understand the space they lived in.
-          </h2>
-          <p style={{ color: 'var(--text-muted)', fontSize: 15.5, lineHeight: 1.8, maxWidth: 620, marginBottom: 40 }}>
-            A kiosk is touched standing up, often quickly, without the precision of a phone held
-            in hand. That changes what &ldquo;usable&rdquo; means for spacing, sizing, and layout.
-          </p>
-          <div className={styles.researchGrid}>
-            <div style={{ width: '100%', maxWidth: 220, margin: '0 auto' }}>
-              <KioskFrame src={IMG('02-menu.png')} alt="Self-Order Kiosk menu grid" ratio={RATIO} />
+    <CasePage
+      title="Self-Order Kiosk: Designing for Touch With No Playbook to Follow"
+      summary="I designed the Self-Order Kiosk experience while researching touch-target sizing and helping build the design-system foundation behind it."
+      meta={[
+        { label: 'Role', value: 'Product Designer' },
+        { label: 'Type', value: 'Self-service / Kiosk' },
+        { label: 'Focus', value: 'UX/UI · Research · Design System' },
+      ]}
+      hero={
+        <ShotGrid
+          priority
+          Frame={KioskFrame}
+          shots={[
+            shot('01-welcome.png', 'Kiosk welcome screen'),
+            shot('02-menu.png', 'Kiosk menu, a touch-first grid of dishes'),
+            shot('03-item-detail.png', 'Item customization panel'),
+          ]}
+        />
+      }
+      context={{
+        text: 'I owned the Self-Order UX/UI design and the touch-target research behind it. When I spotted a gap in the design system, I raised it with the team and helped build the new value-token foundation that resulted.',
+        points: [
+          <><strong>Designed</strong> the Self-Order UX/UI and interaction flows.</>,
+          <><strong>Researched</strong> sizing and touch-target requirements for the kiosk experience.</>,
+          <><strong>Built</strong> a new value-token foundation to support consistent UI decisions.</>,
+          <><strong>Aligned</strong> with the team to validate the direction and move the system forward.</>,
+        ],
+      }}
+      problems={{
+        points: [
+          { lead: 'No playbook', text: 'There were few existing references for kiosk sizing, touch targets, or scalable UI foundations.' },
+          { lead: 'A different way of touching', text: 'A kiosk is used standing up, often quickly, without the precision of a phone held in hand.' },
+          { lead: 'Screen-by-screen decisions', text: 'Sizing and spacing kept being decided per screen, with no shared reference to check against.' },
+          { lead: 'A Design System gap', text: 'The problem went beyond the kiosk.' },
+        ],
+      }}
+      insights={[
+        {
+          title: 'A kiosk is touched differently from a phone.',
+          intro: 'That changes what “usable” means for spacing, sizing, and layout.',
+          decisions: [
+            { lead: 'Full-row tap targets', text: 'Selection options use the entire row, not just the radio circle: dine-in/takeaway, payment method.' },
+            { lead: 'Evenly spaced grid', text: 'Menu items sit in a grid with consistent gaps, sized for a quick, accurate tap.' },
+            { lead: 'One fixed primary action', text: 'A single, high-contrast action bar anchored at the bottom of every screen.' },
+            { lead: 'Repeatable sizing', text: 'The same target sizes and spacing carried across welcome, menu, item detail, and payment.' },
+          ],
+        },
+        {
+          title: 'People shouldn’t lose their place mid-order.',
+          intro: 'Customizing an item or reviewing the cart shouldn’t take them away from the menu.',
+          decisions: [
+            { lead: 'Side panel, not a new page', text: 'Item customization opens beside the menu, which stays visible behind it.' },
+            { lead: 'One pattern, reused', text: 'Cart review uses the exact same panel, so it’s learned once, with less to figure out under time pressure.' },
+          ],
+        },
+        {
+          title: 'The same problem sat underneath the UI.',
+          intro: 'Sizing and spacing were being decided screen by screen. It was a Design System gap, not just a kiosk problem.',
+          decisions: [
+            { lead: 'Raise it', text: 'I raised the gap with the team and we aligned on the direction.' },
+            { lead: 'Value tokens', text: 'I worked on a new value-token set with them, and used it directly to build the Self-Order UI.' },
+          ],
+          extra: (
+            <div style={{ marginTop: 28 }}>
+              <FlowSteps label="How the gap surfaced" steps={['UI needs', 'System gap', 'New value tokens', 'Consistent components']} />
             </div>
-            <div style={{ display: 'grid', gap: 22 }}>
-              {[
-                {
-                  label: 'Full-row tap targets',
-                  text: 'Selection options use the entire row, not just the radio circle: dine-in/takeaway, payment method.',
-                },
-                {
-                  label: 'Evenly spaced grid',
-                  text: 'Menu items sit in a grid with consistent gaps, sized for a quick, accurate tap.',
-                },
-                {
-                  label: 'One fixed primary action',
-                  text: 'A single, high-contrast action bar anchored at the bottom of every screen.',
-                },
-                {
-                  label: 'Repeatable sizing',
-                  text: 'The same target sizes and spacing carried across welcome, menu, item detail, and payment.',
-                },
-              ].map((row) => (
-                <div key={row.label}>
-                  <span style={{ display: 'block', fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--navy-bright-text)', marginBottom: 6 }}>
-                    {row.label}
-                  </span>
-                  <p style={{ fontSize: 15, lineHeight: 1.6, color: 'var(--text-muted)' }}>{row.text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section" style={{ background: 'var(--bg-alt)', borderBottom: '1px solid var(--border)' }}>
-        <div className="container">
-          <span className="eyebrow">Designing the Experience</span>
-          <h2
-            style={{
-              fontSize: 'clamp(24px,3.2vw,30px)',
-              fontWeight: 800,
-              letterSpacing: '-0.015em',
-              marginTop: 10,
-              marginBottom: 22,
-            }}
-          >
-            From a blank flow to a working kiosk.
-          </h2>
-          <FlowSteps
-            label="Main flow"
-            steps={['Welcome', 'Browse menu', 'Customize item', 'Review order', 'Pay']}
-          />
-          <div style={{ marginTop: 36 }}>
-            <ScreenGallery screens={flowScreens} Frame={KioskFrame} />
-          </div>
-
-          <div style={{ marginTop: 24 }}>
-            <DecisionTriple
-              index="01"
-              decision="Item customization opens in a side panel, not a new page."
-              why="The menu stays visible behind it, so people don't lose their place mid-order."
-              image={{ src: IMG('03-item-detail.png'), alt: 'Item customization panel over the dimmed menu', ratio: RATIO }}
-              Frame={KioskFrame}
-            />
-            <DecisionTriple
-              index="02"
-              decision="Cart review reuses the exact same panel pattern."
-              why="One interaction, learned once and reused everywhere, less to figure out under time pressure."
-              image={{ src: IMG('04-order-review.png'), alt: 'Order review panel over the dimmed menu', ratio: RATIO }}
-              Frame={KioskFrame}
-            />
-            <DecisionTriple
-              index="03"
-              decision="Every screen ends in a single, unmistakable action."
-              why="No hover states, no second guesses. Kiosk interactions need to be obvious at a glance."
-              image={{ src: IMG('01-welcome.png'), alt: 'Welcome screen with one primary action', ratio: RATIO }}
-              Frame={KioskFrame}
-            />
-          </div>
-        </div>
-      </section>
-
-      <CaseSection eyebrow="The System Problem" heading="Then the same problem showed up underneath the UI.">
-        <p>
-          While designing the kiosk, sizing and spacing decisions kept getting made screen by
-          screen, with no shared reference to check against. A Design System gap, not just a
-          kiosk problem.
-        </p>
-        <div style={{ marginTop: 28 }}>
-          <FlowSteps
-            label="How the gap surfaced"
-            steps={['UI needs', 'System gap', 'New value tokens', 'Consistent components']}
-          />
-        </div>
-        <p style={{ marginTop: 28 }}>
-          I raised it with the team, we aligned on the direction, and I worked on the new
-          value-token set together with them.
-        </p>
-      </CaseSection>
-
-      <section className="section" style={{ background: 'var(--bg-alt)', borderBottom: '1px solid var(--border)' }}>
-        <div className="container">
-          <span className="eyebrow">From Token to UI</span>
-          <h2
-            style={{
-              fontSize: 'clamp(24px,3.2vw,30px)',
-              fontWeight: 800,
-              letterSpacing: '-0.015em',
-              marginTop: 10,
-              marginBottom: 4,
-            }}
-          >
-            Not theoretical. It&rsquo;s in the product.
-          </h2>
-          <p style={{ color: 'var(--text-muted)', fontSize: 15.5, maxWidth: 560, marginBottom: 36 }}>
-            The value tokens weren&rsquo;t just documentation. I used them directly to build the
-            Self-Order UI.
-          </p>
-          <TokenFlow screen={{ src: IMG('02-menu.png'), alt: 'Self-Order Kiosk menu screen', ratio: RATIO }} />
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container">
-          <span className="eyebrow">The Final Experience</span>
-          <h2
-            style={{
-              fontSize: 'clamp(28px,3.6vw,38px)',
-              fontWeight: 800,
-              letterSpacing: '-0.015em',
-              marginTop: 10,
-              marginBottom: 8,
-            }}
-          >
-            A touch-first experience, built to scale.
-          </h2>
-          <p style={{ color: 'var(--text-muted)', fontSize: 15, maxWidth: 560, marginBottom: 8 }}>
-            The complete Self-Order flow, end to end.
-          </p>
-          <ScreenGallery screens={finalScreens} Frame={KioskFrame} wide />
-        </div>
-      </section>
-
-      <CaseSection eyebrow="Impact" heading="What this work left behind." alt>
-        <p>
-          The kiosk itself is a design deliverable, not yet shipped, but the underlying problem
-          it surfaced was real: a missing value-token foundation in the shared Design System.
-          The tokens I helped build were adopted into the system and are now available for the
-          whole team to use.
-        </p>
-        <ul style={{ marginTop: 18, paddingLeft: 20, lineHeight: 1.9, color: 'var(--text-muted)' }}>
-          <li>A complete Self-Order UI experience, designed end-to-end on the interaction/UI side</li>
-          <li>Research-informed sizing and touch-target decisions</li>
-          <li>A new value-token foundation adopted into the shared design system</li>
-          <li>Stronger scalability for future screens and components</li>
-        </ul>
-      </CaseSection>
-
-      <section className="section">
-        <div className="container" style={{ maxWidth: 760, textAlign: 'center' }}>
-          <p
-            style={{
-              fontSize: 'clamp(22px, 2.8vw, 28px)',
-              fontWeight: 700,
-              letterSpacing: '-0.01em',
-              lineHeight: 1.5,
-            }}
-          >
-            I wasn&rsquo;t just designing the interface. I was helping define the{' '}
-            <span style={{ color: 'var(--navy-bright-text)' }}>foundation</span> it needed to work
-            well.
-          </p>
-        </div>
-      </section>
-
-      <CaseFooterNav nextName="About" nextHref="/#about" nextLabel="Up next" />
-    </>
+          ),
+        },
+      ]}
+      validation={{
+        title: 'User & Team Validation',
+        intro: 'We tried the design with users, and I worked with the team to validate the direction and move the system forward.',
+        points: [
+          { lead: 'Evaluation', text: 'We tried the button sizes and hand reach with users on a vertical screen.' },
+          { lead: 'Result', text: 'The sizes were comfortable to use.' },
+          { lead: 'Design System', text: 'The value tokens used to build the Self-Order UI were adopted into the shared Design System.' },
+        ],
+      }}
+      design={{
+        title: 'Delivering a touch-first ordering experience',
+        intro: <FlowSteps label="Main flow" steps={['Welcome', 'Browse menu', 'Customize item', 'Review order', 'Pay']} />,
+        modules: [
+          {
+            title: 'Welcome & Menu',
+            text: 'Choose dine-in or takeaway, then browse the menu with a category rail, filter chips, and an evenly spaced item grid.',
+            media: (
+              <ShotGrid
+                Frame={KioskFrame}
+                shots={[shot('01-welcome.png', 'Welcome: dine-in or takeaway'), shot('02-menu.png', 'Menu with categories and filters')]}
+              />
+            ),
+          },
+          {
+            title: 'Customize & Review',
+            text: 'Ingredients, add-ons, quantity, and the full order are all editable in the same side panel, with the menu still in view.',
+            media: (
+              <ShotGrid
+                Frame={KioskFrame}
+                shots={[shot('03-item-detail.png', 'Item customization panel'), shot('04-order-review.png', 'Order review panel')]}
+              />
+            ),
+          },
+          {
+            title: 'Payment',
+            text: 'Four payment methods, each a full-width, unambiguous tap target.',
+            media: <ShotGrid Frame={KioskFrame} columns={1} shots={[shot('05-payment.png', 'Payment method selection')]} />,
+          },
+          {
+            title: 'From Token to UI',
+            text: 'The value tokens weren’t just documentation. They are what the Self-Order UI is built on.',
+            media: <TokenFlow screen={{ src: IMG('02-menu.png'), alt: 'Self-Order Kiosk menu screen', ratio: RATIO }} />,
+          },
+        ],
+      }}
+      impact={{
+        points: [
+          { lead: 'Design System foundation', text: 'The value tokens I helped build were adopted into the shared Design System and are available to the whole team.' },
+          { lead: 'A complete Self-Order UI', text: 'Designed end-to-end on the interaction and UI side.' },
+          { lead: 'Research-informed sizing', text: 'Sizing and touch-target decisions grounded in how a kiosk is used.' },
+          { lead: 'Scalability', text: 'A stronger base for future screens and components.' },
+          { lead: 'Status', text: 'The kiosk itself is a design deliverable, not yet shipped.' },
+        ],
+        closing: 'I wasn’t just designing the interface. I was helping define the foundation it needed to work well.',
+      }}
+      prev={{ to: '/work/fooj', name: 'Fooj' }}
+      next={{ to: '/work/pos', name: 'Ored POS' }}
+    />
   )
 }
